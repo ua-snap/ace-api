@@ -1,0 +1,60 @@
+{
+  "name": "position",
+  "plural": "Positions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "latlng": {
+      "type": "geopoint",
+      "required": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    },
+    "accuracy": {
+      "type": "number"
+    },
+    "altitude": {
+      "type": "number"
+    },
+    "altitudeAccuracy": {
+      "type": "number"
+    },
+    "heading": {
+      "type": "number"
+    },
+    "speed": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MobileUser": {
+      "type": "hasOne",
+      "model": "mobile_user",
+      "foreignKey": ""
+    },
+    "WeatherReport": {
+      "type": "hasOne",
+      "model": "weather_report",
+      "foreignKey": "positionId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}

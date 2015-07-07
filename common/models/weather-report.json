@@ -1,0 +1,80 @@
+{
+  "name": "weather_report",
+  "plural": "WeatherReports",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "positionId": {
+      "type": "number",
+      "required": true
+    },
+    "cloudCover": {
+      "type": "string"
+    },
+    "precipitation": {
+      "type": "string"
+    },
+    "visibility": {
+      "type": "string"
+    },
+    "pressureTendency": {
+      "type": "string"
+    },
+    "pressureValue": {
+      "type": "number"
+    },
+    "temperatureValue": {
+      "type": "number"
+    },
+    "temperatureUnits": {
+      "type": "string"
+    },
+    "windValue": {
+      "type": "number"
+    },
+    "windUnits": {
+      "type": "string"
+    },
+    "windDirection": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "other": {
+      "type": "string"
+    },
+    "attachment": {
+      "type": "buffer"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MobileUser": {
+      "type": "hasOne",
+      "model": "mobile_user",
+      "foreignKey": ""
+    },
+    "Position": {
+      "type": "hasOne",
+      "model": "position",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}

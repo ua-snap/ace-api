@@ -1,0 +1,42 @@
+{
+  "name": "mobile_user",
+  "plural": "MobileUsers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "groupId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "WeatherReports": {
+      "type": "hasMany",
+      "model": "weather_report",
+      "foreignKey": "userId"
+    },
+    "Positions": {
+      "type": "hasMany",
+      "model": "position",
+      "foreignKey": "userId"
+    },
+    "Group": {
+      "type": "hasOne",
+      "model": "group",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "__get__Groups"
+    }
+  ],
+  "methods": []
+}
