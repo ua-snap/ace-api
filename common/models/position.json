@@ -40,7 +40,7 @@
     "MobileUser": {
       "type": "hasOne",
       "model": "mobile_user",
-      "foreignKey": ""
+      "foreignKey": "id"
     },
     "WeatherReport": {
       "type": "hasOne",

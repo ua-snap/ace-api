@@ -26,7 +26,7 @@
     "Group": {
       "type": "hasOne",
       "model": "group",
-      "foreignKey": ""
+      "foreignKey": "id"
     }
   },
   "acls": [
@@ -35,7 +35,7 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "__get__Groups"
+      "property": "__get__Group"
     }
   ],
   "methods": []

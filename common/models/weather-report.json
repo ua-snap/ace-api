@@ -60,12 +60,12 @@
     "MobileUser": {
       "type": "hasOne",
       "model": "mobile_user",
-      "foreignKey": ""
+      "foreignKey": "id"
     },
     "Position": {
       "type": "hasOne",
       "model": "position",
-      "foreignKey": ""
+      "foreignKey": "id"
     }
   },
   "acls": [
