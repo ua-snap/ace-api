@@ -38,21 +38,16 @@
   "validations": [],
   "relations": {
     "MobileUser": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "mobile_user",
-      "foreignKey": "id"
-    },
-    "WeatherReport": {
-      "type": "hasOne",
-      "model": "weather_report",
-      "foreignKey": "positionId"
+      "foreignKey": "userId"
     }
   },
   "acls": [
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$unauthenticated",
+      "principalId": "$unauthorized",
       "permission": "DENY"
     }
   ],

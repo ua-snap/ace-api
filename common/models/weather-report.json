@@ -58,21 +58,21 @@
   "validations": [],
   "relations": {
     "MobileUser": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "mobile_user",
-      "foreignKey": "id"
+      "foreignKey": "userId"
     },
     "Position": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "position",
-      "foreignKey": "id"
+      "foreignKey": "positionId"
     }
   },
   "acls": [
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$unauthenticated",
+      "principalId": "$unauthorized",
       "permission": "DENY"
     }
   ],

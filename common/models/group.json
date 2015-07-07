@@ -24,9 +24,9 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$unauthenticated",
+      "principalId": "$unauthorized",
       "permission": "DENY"
-    }
+    }    
   ],
   "methods": []
 }
