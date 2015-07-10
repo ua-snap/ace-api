@@ -9,13 +9,13 @@ module.exports = function(app) {
 		{username: "appuser3", email: "test3@test.com", password:"password3", groupId: 2}
 	]);
 	
-	app.models.position.create([
+	/*app.models.position.create([
 		{userId: 1, latlng: {lat:32.602351, lng:-85.489553}, timestamp: new Date()}
 	], function(err, positions) {
 		var posId = positions[0].id;
 		app.models.weather_report.create([
 			{userId: 1, positionId: posId, cloudCover: "1/8th"}
 		]);
-	});
+	});*/
 	
 };
