@@ -47,4 +47,4 @@ build/Release
 node_modules
 
 # Uploaded files
-server/storage
+server/storage/*
