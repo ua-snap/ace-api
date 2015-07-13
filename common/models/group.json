@@ -26,7 +26,7 @@
       "principalType": "ROLE",
       "principalId": "$unauthorized",
       "permission": "DENY"
-    }    
+    }
   ],
   "methods": []
 }

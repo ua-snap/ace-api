@@ -48,5 +48,9 @@
   "group": {
     "dataSource": "db",
     "public": true
+  },
+  "storage": {
+    "dataSource": "storage",
+    "public": true
   }
 }

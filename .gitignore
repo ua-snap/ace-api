@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *.csv
 *.dat
 *.iml
@@ -46,4 +45,6 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
->>>>>>> 3ea486eb4fbbdea011e3443afe1e2c4daa7608ea
+
+# Uploaded files
+server/storage
