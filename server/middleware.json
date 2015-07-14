@@ -16,15 +16,7 @@
   "auth": {},
   "parse": {},
   "routes": {},
-  "files": {
-    "loopback#static": [
-      {
-        "params": "$!../upload_browser_client"
-      }, {
-        "params": "$!../client"
-      }
-    ]
-  },
+  "files": {},
   "final": {
     "loopback#urlNotFound": {}
   },

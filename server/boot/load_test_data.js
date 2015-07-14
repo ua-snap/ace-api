@@ -1,5 +1,5 @@
 module.exports = function(app) {
-	// Create group
+	/*// Create group
 	app.models.group.create([{name: "Group1"}]);
 	app.models.group.create([{name: "Group2"}]);
 	
@@ -10,7 +10,7 @@ module.exports = function(app) {
 	]);
 	
 	app.models.Storage.createContainer({name: "mobile_uploads"}, function() {});
-	
+	*/
 	/*app.models.position.create([
 		{userId: 1, latlng: {lat:32.602351, lng:-85.489553}, timestamp: new Date()}
 	], function(err, positions) {
