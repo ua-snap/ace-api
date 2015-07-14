@@ -17,22 +17,40 @@
     },
     "timestamp": {
       "type": "date",
-      "required": true
+      "required": true,
+      "postgresql": {
+        "dataType": "numeric"
+      }
     },
     "accuracy": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "numeric"
+      }
     },
     "altitude": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "numeric"
+      }
     },
     "altitudeAccuracy": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "numeric"
+      }
     },
     "heading": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "numeric"
+      }
     },
     "speed": {
-      "type": "number"
+      "type": "number",
+      "postgresql": {
+        "dataType": "numeric"
+      }
     }
   },
   "validations": [],
