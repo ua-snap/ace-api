@@ -14,23 +14,23 @@
     ]
   },
   "User": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "Role": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "weather_report": {
