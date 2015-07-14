@@ -52,7 +52,7 @@
       "type": "string"
     },
     "attachment": {
-      "type": "buffer"
+      "type": "string"
     }
   },
   "validations": [],
