@@ -17,10 +17,7 @@
     },
     "timestamp": {
       "type": "date",
-      "required": true,
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "required": true
     },
     "accuracy": {
       "type": "number",
