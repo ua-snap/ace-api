@@ -18,6 +18,11 @@
       "model": "weather_report",
       "foreignKey": "userId"
     },
+    "weather_report": {
+      "type": "hasMany",
+      "model": "weather_report",
+      "foreignKey": "userId"
+    },
     "Positions": {
       "type": "hasMany",
       "model": "position",

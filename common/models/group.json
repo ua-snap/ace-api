@@ -24,7 +24,14 @@
       "model": "position",
       "foreignKey": "groupId",
       "through": "mobile_user",
-      "keyThrough": "positionId"
+      "keyThrough": "userId"
+    },
+    "WeatherReports": {
+      "type": "hasMany",
+      "model": "weather_report",
+      "foreignKey": "groupId",
+      "through": "mobile_user",
+      "keyThrough": "userId"
     }
   },
   "acls": [

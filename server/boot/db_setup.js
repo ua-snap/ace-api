@@ -1,7 +1,7 @@
 // Automigrates all data models
 module.exports = function(app) {
 	// 	Groups
-	/*app.dataSources.postgresql_heroku.automigrate('group', function(err) {
+	app.dataSources.postgresql_heroku.automigrate('group', function(err) {
 		if (err) throw err;
 		
 		app.models.group.create([{name: "IonicViewUsers"}]);
@@ -33,5 +33,5 @@ module.exports = function(app) {
 	// Weather Report
 	app.dataSources.postgresql_heroku.automigrate('weather_report', function(err) {
 		if (err) throw err;
-	});*/
+	});
 };
