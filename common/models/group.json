@@ -23,7 +23,8 @@
       "type": "hasMany",
       "model": "position",
       "foreignKey": "groupId",
-      "through": "mobile_user"
+      "through": "mobile_user",
+      "keyThrough": "positionId"
     }
   },
   "acls": [

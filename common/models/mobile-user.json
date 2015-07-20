@@ -23,6 +23,11 @@
       "model": "position",
       "foreignKey": "userId"
     },
+    "position": {
+      "type": "hasMany",
+      "model": "position",
+      "foreignKey": "userId"
+    },
     "Group": {
       "type": "belongsTo",
       "model": "group",
