@@ -18,6 +18,12 @@
       "type": "hasMany",
       "model": "mobile_user",
       "foreignKey": "groupId"
+    },
+    "Positions": {
+      "type": "hasMany",
+      "model": "position",
+      "foreignKey": "groupId",
+      "through": "mobile_user"
     }
   },
   "acls": [

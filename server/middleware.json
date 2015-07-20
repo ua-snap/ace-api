@@ -16,7 +16,7 @@
   "auth": {},
   "parse": {},
   "routes": {},
-  "files": { 
+  "files": {
     "loopback#static": {
       "params": "$!../upload_browser_client"
     }
