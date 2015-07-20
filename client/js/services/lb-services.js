@@ -17,13 +17,13 @@ var module = angular.module("lbServices", ['ngResource']);
 
 /**
  * @ngdoc object
- * @name lbServices.Weather_report
- * @header lbServices.Weather_report
+ * @name lbServices.Weatherreport
+ * @header lbServices.Weatherreport
  * @object
  *
  * @description
  *
- * A $resource object for interacting with the `Weather_report` model.
+ * A $resource object for interacting with the `Weatherreport` model.
  *
  * ## Example
  *
@@ -33,20 +33,20 @@ var module = angular.module("lbServices", ['ngResource']);
  *
  */
 module.factory(
-  "Weather_report",
+  "Weatherreport",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
       urlBase + "/WeatherReports/:id",
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Weather_report.Position() instead.
+        // INTERNAL. Use Weatherreport.Position() instead.
         "prototype$__get__Position": {
           url: urlBase + "/WeatherReports/:id/Position",
           method: "GET"
         },
 
-        // INTERNAL. Use Weather_report.MobileUser() instead.
+        // INTERNAL. Use Weatherreport.MobileUser() instead.
         "prototype$__get__MobileUser": {
           url: urlBase + "/WeatherReports/:id/MobileUser",
           method: "GET"
@@ -54,8 +54,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#create
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#create
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -82,7 +82,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "create": {
@@ -92,8 +92,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#createMany
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#createMany
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -120,7 +120,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "createMany": {
@@ -131,8 +131,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#upsert
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#upsert
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -159,7 +159,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "upsert": {
@@ -169,8 +169,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#exists
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#exists
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -201,8 +201,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#findById
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#findById
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -226,7 +226,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "findById": {
@@ -236,8 +236,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#find
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#find
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -259,7 +259,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "find": {
@@ -270,8 +270,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#findOne
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#findOne
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -293,7 +293,7 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "findOne": {
@@ -303,8 +303,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#updateAll
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#updateAll
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -337,8 +337,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#deleteById
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#deleteById
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -367,8 +367,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#count
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#count
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -399,8 +399,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#prototype$updateAttributes
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#prototype$updateAttributes
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -408,8 +408,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
+         *  - `id` – `{*}` - PersistedModel id
          *
          * @param {Object} postData Request data.
          *
@@ -427,12 +426,49 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         "prototype$updateAttributes": {
           url: urlBase + "/WeatherReports/:id",
           method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Weatherreport#createChangeStream
+         * @methodOf lbServices.Weatherreport
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/WeatherReports/change-stream",
+          method: "POST"
         },
 
         // INTERNAL. Use Mobile_user.WeatherReports.findById() instead.
@@ -493,6 +529,92 @@ module.factory(
           url: urlBase + "/MobileUsers/:id/WeatherReports/count",
           method: "GET"
         },
+
+        // INTERNAL. Use Group.WeatherReports.findById() instead.
+        "::findById::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.destroyById() instead.
+        "::destroyById::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.updateById() instead.
+        "::updateById::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.link() instead.
+        "::link::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.unlink() instead.
+        "::unlink::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.exists() instead.
+        "::exists::group::WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "HEAD"
+        },
+
+        // INTERNAL. Use Group.WeatherReports() instead.
+        "::get::group::WeatherReports": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.create() instead.
+        "::create::group::WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.createMany() instead.
+        "::createMany::group::WeatherReports": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.destroyAll() instead.
+        "::delete::group::WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.count() instead.
+        "::count::group::WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports/count",
+          method: "GET"
+        },
       }
     );
 
@@ -500,8 +622,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#updateOrCreate
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#updateOrCreate
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -528,15 +650,15 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R["updateOrCreate"] = R["upsert"];
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#update
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#update
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -566,8 +688,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#destroyById
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#destroyById
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -593,8 +715,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#removeById
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#removeById
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -621,19 +743,19 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name lbServices.Weather_report#modelName
-    * @propertyOf lbServices.Weather_report
+    * @name lbServices.Weatherreport#modelName
+    * @propertyOf lbServices.Weatherreport
     * @description
     * The name of the model represented by this $resource,
-    * i.e. `Weather_report`.
+    * i.e. `Weatherreport`.
     */
-    R.modelName = "Weather_report";
+    R.modelName = "Weatherreport";
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#Position
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#Position
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -662,14 +784,14 @@ module.factory(
          */
         R.Position = function() {
           var TargetResource = $injector.get("Position");
-          var action = TargetResource["::get::weather_report::Position"];
+          var action = TargetResource["::get::weatherreport::Position"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Weather_report#MobileUser
-         * @methodOf lbServices.Weather_report
+         * @name lbServices.Weatherreport#MobileUser
+         * @methodOf lbServices.Weatherreport
          *
          * @description
          *
@@ -698,7 +820,7 @@ module.factory(
          */
         R.MobileUser = function() {
           var TargetResource = $injector.get("Mobile_user");
-          var action = TargetResource["::get::weather_report::MobileUser"];
+          var action = TargetResource["::get::weatherreport::MobileUser"];
           return action.apply(R, arguments);
         };
 
@@ -1092,8 +1214,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
+         *  - `id` – `{*}` - PersistedModel id
          *
          * @param {Object} postData Request data.
          *
@@ -1119,8 +1240,45 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use Weather_report.Position() instead.
-        "::get::weather_report::Position": {
+        /**
+         * @ngdoc method
+         * @name lbServices.Position#createChangeStream
+         * @methodOf lbServices.Position
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/Positions/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Weatherreport.Position() instead.
+        "::get::weatherreport::Position": {
           url: urlBase + "/WeatherReports/:id/Position",
           method: "GET"
         },
@@ -1181,6 +1339,92 @@ module.factory(
         // INTERNAL. Use Mobile_user.Positions.count() instead.
         "::count::mobile_user::Positions": {
           url: urlBase + "/MobileUsers/:id/Positions/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions.findById() instead.
+        "::findById::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions.destroyById() instead.
+        "::destroyById::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.updateById() instead.
+        "::updateById::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.Positions.link() instead.
+        "::link::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.Positions.unlink() instead.
+        "::unlink::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.exists() instead.
+        "::exists::group::Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "HEAD"
+        },
+
+        // INTERNAL. Use Group.Positions() instead.
+        "::get::group::Positions": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/Positions",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions.create() instead.
+        "::create::group::Positions": {
+          url: urlBase + "/Groups/:id/Positions",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.Positions.createMany() instead.
+        "::createMany::group::Positions": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/Positions",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.Positions.destroyAll() instead.
+        "::delete::group::Positions": {
+          url: urlBase + "/Groups/:id/Positions",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.count() instead.
+        "::count::group::Positions": {
+          url: urlBase + "/Groups/:id/Positions/count",
           method: "GET"
         },
       }
@@ -2130,6 +2374,43 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name lbServices.Mobile_user#createChangeStream
+         * @methodOf lbServices.Mobile_user
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/MobileUsers/change-stream",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
          * @name lbServices.Mobile_user#login
          * @methodOf lbServices.Mobile_user
          *
@@ -2295,8 +2576,8 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use Weather_report.MobileUser() instead.
-        "::get::weather_report::MobileUser": {
+        // INTERNAL. Use Weatherreport.MobileUser() instead.
+        "::get::weatherreport::MobileUser": {
           url: urlBase + "/WeatherReports/:id/MobileUser",
           method: "GET"
         },
@@ -2589,7 +2870,7 @@ module.factory(
      * @description
      *
      * The object `Mobile_user.WeatherReports` groups methods
-     * manipulating `Weather_report` instances related to `Mobile_user`.
+     * manipulating `Weatherreport` instances related to `Mobile_user`.
      *
      * Call {@link lbServices.Mobile_user#WeatherReports Mobile_user.WeatherReports()}
      * to query all related instances.
@@ -2623,11 +2904,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R.WeatherReports = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::get::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2662,7 +2943,7 @@ module.factory(
          *  - `count` – `{number=}` - 
          */
         R.WeatherReports.count = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::count::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2696,11 +2977,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R.WeatherReports.create = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::create::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2734,11 +3015,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R.WeatherReports.createMany = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::createMany::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2769,7 +3050,7 @@ module.factory(
          * This method returns no data.
          */
         R.WeatherReports.destroyAll = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::delete::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2802,7 +3083,7 @@ module.factory(
          * This method returns no data.
          */
         R.WeatherReports.destroyById = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::destroyById::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2834,11 +3115,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R.WeatherReports.findById = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::findById::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -2874,11 +3155,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Weather_report` object.)
+         * This usually means the response is a `Weatherreport` object.)
          * </em>
          */
         R.WeatherReports.updateById = function() {
-          var TargetResource = $injector.get("Weather_report");
+          var TargetResource = $injector.get("Weatherreport");
           var action = TargetResource["::updateById::mobile_user::WeatherReports"];
           return action.apply(R, arguments);
         };
@@ -3275,6 +3556,114 @@ module.factory(
           method: "PUT"
         },
 
+        // INTERNAL. Use Group.Positions.findById() instead.
+        "prototype$__findById__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions.destroyById() instead.
+        "prototype$__destroyById__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.updateById() instead.
+        "prototype$__updateById__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.Positions.link() instead.
+        "prototype$__link__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.Positions.unlink() instead.
+        "prototype$__unlink__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.exists() instead.
+        "prototype$__exists__Positions": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/Positions/rel/:fk",
+          method: "HEAD"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.findById() instead.
+        "prototype$__findById__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.destroyById() instead.
+        "prototype$__destroyById__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.updateById() instead.
+        "prototype$__updateById__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.link() instead.
+        "prototype$__link__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.unlink() instead.
+        "prototype$__unlink__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.exists() instead.
+        "prototype$__exists__WeatherReports": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/WeatherReports/rel/:fk",
+          method: "HEAD"
+        },
+
         // INTERNAL. Use Group.MobileUsers() instead.
         "prototype$__get__MobileUsers": {
           isArray: true,
@@ -3297,6 +3686,56 @@ module.factory(
         // INTERNAL. Use Group.MobileUsers.count() instead.
         "prototype$__count__MobileUsers": {
           url: urlBase + "/Groups/:id/MobileUsers/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions() instead.
+        "prototype$__get__Positions": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/Positions",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.Positions.create() instead.
+        "prototype$__create__Positions": {
+          url: urlBase + "/Groups/:id/Positions",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.Positions.destroyAll() instead.
+        "prototype$__delete__Positions": {
+          url: urlBase + "/Groups/:id/Positions",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.Positions.count() instead.
+        "prototype$__count__Positions": {
+          url: urlBase + "/Groups/:id/Positions/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.WeatherReports() instead.
+        "prototype$__get__WeatherReports": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.create() instead.
+        "prototype$__create__WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.destroyAll() instead.
+        "prototype$__delete__WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.WeatherReports.count() instead.
+        "prototype$__count__WeatherReports": {
+          url: urlBase + "/Groups/:id/WeatherReports/count",
           method: "GET"
         },
 
@@ -3656,8 +4095,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
+         *  - `id` – `{*}` - PersistedModel id
          *
          * @param {Object} postData Request data.
          *
@@ -3681,6 +4119,43 @@ module.factory(
         "prototype$updateAttributes": {
           url: urlBase + "/Groups/:id",
           method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group#createChangeStream
+         * @methodOf lbServices.Group
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/Groups/change-stream",
+          method: "POST"
         },
 
         // INTERNAL. Use Mobile_user.Group() instead.
@@ -4123,6 +4598,826 @@ module.factory(
         R.MobileUsers.updateById = function() {
           var TargetResource = $injector.get("Mobile_user");
           var action = TargetResource["::updateById::group::MobileUsers"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Group.Positions
+     * @header lbServices.Group.Positions
+     * @object
+     * @description
+     *
+     * The object `Group.Positions` groups methods
+     * manipulating `Position` instances related to `Group`.
+     *
+     * Call {@link lbServices.Group#Positions Group.Positions()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group#Positions
+         * @methodOf lbServices.Group
+         *
+         * @description
+         *
+         * Queries Positions of group.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::get::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#count
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Counts Positions of group.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.Positions.count = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::count::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#create
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Creates a new instance in Positions of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.create = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::create::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#createMany
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Creates a new instance in Positions of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.createMany = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::createMany::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#destroyAll
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Deletes all Positions of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.Positions.destroyAll = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::delete::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#destroyById
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Delete a related item by id for Positions.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.Positions.destroyById = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::destroyById::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#exists
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Check the existence of Positions relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.exists = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::exists::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#findById
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Find a related item by id for Positions.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.findById = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::findById::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#link
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Add a related item by id for Positions.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.link = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::link::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#unlink
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Remove the Positions relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.Positions.unlink = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::unlink::group::Positions"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.Positions#updateById
+         * @methodOf lbServices.Group.Positions
+         *
+         * @description
+         *
+         * Update a related item by id for Positions.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for Positions
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Position` object.)
+         * </em>
+         */
+        R.Positions.updateById = function() {
+          var TargetResource = $injector.get("Position");
+          var action = TargetResource["::updateById::group::Positions"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Group.WeatherReports
+     * @header lbServices.Group.WeatherReports
+     * @object
+     * @description
+     *
+     * The object `Group.WeatherReports` groups methods
+     * manipulating `Weatherreport` instances related to `Group`.
+     *
+     * Call {@link lbServices.Group#WeatherReports Group.WeatherReports()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group#WeatherReports
+         * @methodOf lbServices.Group
+         *
+         * @description
+         *
+         * Queries WeatherReports of group.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::get::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#count
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Counts WeatherReports of group.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.WeatherReports.count = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::count::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#create
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Creates a new instance in WeatherReports of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.create = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::create::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#createMany
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Creates a new instance in WeatherReports of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.createMany = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::createMany::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#destroyAll
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Deletes all WeatherReports of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.WeatherReports.destroyAll = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::delete::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#destroyById
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Delete a related item by id for WeatherReports.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.WeatherReports.destroyById = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::destroyById::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#exists
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Check the existence of WeatherReports relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.exists = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::exists::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#findById
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Find a related item by id for WeatherReports.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.findById = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::findById::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#link
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Add a related item by id for WeatherReports.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.link = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::link::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#unlink
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Remove the WeatherReports relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.WeatherReports.unlink = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::unlink::group::WeatherReports"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Group.WeatherReports#updateById
+         * @methodOf lbServices.Group.WeatherReports
+         *
+         * @description
+         *
+         * Update a related item by id for WeatherReports.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for WeatherReports
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Weatherreport` object.)
+         * </em>
+         */
+        R.WeatherReports.updateById = function() {
+          var TargetResource = $injector.get("Weatherreport");
+          var action = TargetResource["::updateById::group::WeatherReports"];
           return action.apply(R, arguments);
         };
 

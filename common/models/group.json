@@ -28,7 +28,7 @@
     },
     "WeatherReports": {
       "type": "hasMany",
-      "model": "weather_report",
+      "model": "weatherreport",
       "foreignKey": "groupId",
       "through": "mobile_user",
       "keyThrough": "userId"

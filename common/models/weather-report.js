@@ -1,3 +1,3 @@
-module.exports = function(WeatherReport) {
+module.exports = function(Weatherreport) {
 	
 };

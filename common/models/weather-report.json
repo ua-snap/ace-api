@@ -1,5 +1,5 @@
 {
-  "name": "weather_report",
+  "name": "weatherreport",
   "plural": "WeatherReports",
   "base": "PersistedModel",
   "idInjection": true,

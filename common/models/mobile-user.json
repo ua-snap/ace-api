@@ -15,12 +15,12 @@
   "relations": {
     "WeatherReports": {
       "type": "hasMany",
-      "model": "weather_report",
+      "model": "weatherreport",
       "foreignKey": "userId"
     },
-    "weather_report": {
+    "weatherreport": {
       "type": "hasMany",
-      "model": "weather_report",
+      "model": "weatherreport",
       "foreignKey": "userId"
     },
     "Positions": {

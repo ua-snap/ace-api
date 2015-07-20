@@ -31,7 +31,7 @@ module.exports = function(app) {
 	});
 	
 	// Weather Report
-	app.dataSources.postgresql_heroku.automigrate('weather_report', function(err) {
+	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
 	});
 };
