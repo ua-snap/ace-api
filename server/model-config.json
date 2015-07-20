@@ -33,7 +33,7 @@
     "dataSource": "db",
     "public": false
   },
-  "weather_report": {
+  "weatherreport": {
     "dataSource": "postgresql_heroku",
     "public": true
   },
