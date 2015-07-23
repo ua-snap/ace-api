@@ -1,0 +1,6 @@
+{
+    "name": "RemoteWeatherReport",
+    "base": "weatherreport",
+    "plural": "WeatherReports",
+    "trackChanges": false,
+    "enableRemoteReplication": true
