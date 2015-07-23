@@ -2,13 +2,13 @@
   "name": "mobile_user",
   "plural": "MobileUsers",
   "base": "User",
-  "idInjection": true,
-  "trackChanges": true,
-  "persistUndefinedAsNull": true,
   "strict": "validate",
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
   "properties": {
     "id": {
       "type": "string",
