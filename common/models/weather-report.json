@@ -3,10 +3,18 @@
   "plural": "WeatherReports",
   "base": "PersistedModel",
   "idInjection": true,
+    "trackChanges": true,
+    "persistUndefinedAsNull": true,
+    "strict": "validate",  
   "options": {
     "validateUpsert": true
   },
   "properties": {
+      "id": {
+          "id": true,
+          "type": "string",
+          "defaultFn": "guid"
+      },
     "userId": {
       "type": "number",
       "required": true
