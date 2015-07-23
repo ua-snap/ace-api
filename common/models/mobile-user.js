@@ -16,4 +16,8 @@ module.exports = function(MobileUser) {
 	MobileUser.disableRemoteMethod('__findById__weatherreport', false);
 	MobileUser.disableRemoteMethod('__get__weatherreport', false);
 	MobileUser.disableRemoteMethod('__updateById__weatherreport', false);	
+	
+	MobileUser.handleChangeError = function(err) {
+		console.warn("Cannot update change records for MobileUser: ", err);	
+	};
 };
