@@ -1,7 +1,7 @@
 // Automigrates all data models
 module.exports = function(app) {
 	// 	Groups
-	app.dataSources.postgresql_heroku.automigrate('group', function(err) {
+	/*app.dataSources.postgresql_heroku.automigrate('group', function(err) {
 		if (err) throw err;
 		
 		// Mobile Users
@@ -19,12 +19,12 @@ module.exports = function(app) {
 				]);
 			});
 				
-			app.models.group.create([{name: "DummyUserAccounts"}]);	
+			app.models.group.create([{name: "DummyUserAccounts"}], function(err, group) {
 				app.models.mobile_user.create([
-					{username: "appuser", email: "test@test.com", password:"password", groupId: 2},
-					{username: "appuser2", email: "test2@test.com", password:"password", groupId: 2},
-					{username: "appuser3", email: "test3@test.com", password:"password", groupId: 2}			
-				]);				
+					{username: "appuser", email: "test@test.com", password:"password", groupId: group.id},
+					{username: "appuser2", email: "test2@test.com", password:"password", groupId: group.id},
+					{username: "appuser3", email: "test3@test.com", password:"password", groupId: group.id}			
+				]);
 			});			
 		});
 	
@@ -37,5 +37,5 @@ module.exports = function(app) {
 	// Weather Report
 	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
-	});
+	});*/
 };
