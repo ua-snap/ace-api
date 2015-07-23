@@ -5,14 +5,14 @@
   "idInjection": true,
   "trackChanges": true,
   "persistUndefinedAsNull": true,
-  "strict": "validate", 
+  "strict": "validate",
   "options": {
     "validateUpsert": true
-  },
+  },  
   "properties": {
     "id": {
-      "id": true,
       "type": "string",
+      "id": true,
       "defaultFn": "guid"
     },
     "userId": {
@@ -70,7 +70,7 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$unauthorized",
+      "principalId": "$unauthenticated",
       "permission": "DENY"
     }
   ],
