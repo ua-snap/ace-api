@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     dist: 'client/dist'
   };
   
+  // Configuration for grunt tasks
   grunt.initConfig({
     loopback_sdk_angular: {
       services: {
@@ -399,18 +400,35 @@ module.exports = function(grunt) {
         },
         src: ['server/test/**/*.js']
       }
+    },
+    
+    // Text replace task (to correct generated browser.bundle.js sync library)
+    replace: {
+      correct_browser_bundle: {
+        src: ['client/lbclient/browser.bundle.js'],
+        dest: ['client/lbclient/browser.bundle.js'],
+        replacements: [{
+          from: 'opts.protocol = opts.protocol || window.location.protocol',
+          to: 'if(!opts.uri && !opts.uri.protocol){opts.protocol = opts.protocol || window.location.protocol}else{opts.protocol = opts.uri.protocol;}'
+        }]
+      }
     }
   });
  
   // Load the plugin that provides the "loopback-sdk-angular" and "grunt-docular" tasks.
   grunt.loadNpmTasks('grunt-loopback-sdk-angular');
   grunt.loadNpmTasks('grunt-docular');
+  
+  // Load text replace module (used to correct generate browser.bundle.js error with window.location.protocol)
+  grunt.loadNpmTasks('grunt-text-replace');
+  
   // Default task(s).
   grunt.registerTask('default', ['loopback_sdk_angular', 'docular']);
   
   grunt.registerTask('build-lbclient', 'Build lbclient browser bundle', function() {
     var done = this.async();
     buildClientBundle(process.env.NODE_ENV || 'development', done);
+    grunt.task.run('replace');
   });
 
   grunt.registerTask('build-config', 'Build confg.js from JSON files', function() {
