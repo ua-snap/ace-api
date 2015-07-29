@@ -404,12 +404,37 @@ module.exports = function(grunt) {
     
     // Text replace task (to correct generated browser.bundle.js sync library)
     replace: {
-      correct_browser_bundle: {
+      loadFromFile: {
         src: ['client/lbclient/browser.bundle.js'],
-        dest: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
         replacements: [{
-          from: 'opts.protocol = opts.protocol || window.location.protocol',
-          to: 'if(!opts.uri && !opts.uri.protocol){opts.protocol = opts.protocol || window.location.protocol}else{opts.protocol = opts.uri.protocol;}'
+          from: /Memory\.prototype\.loadFromFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.loadFromFile[\s\S]*?\n\t};/);
+          }
+        }]
+      },
+      saveToFile: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /Memory\.prototype\.saveToFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
+          }
+        }]
+      },
+      windowLocationFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: "opts.protocol = opts.protocol || window.location.protocol",
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/if\(!opts.uri[\s\S]*?;\n\t\t}/);
+          }
         }]
       }
     }
@@ -428,6 +453,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build-lbclient', 'Build lbclient browser bundle', function() {
     var done = this.async();
     buildClientBundle(process.env.NODE_ENV || 'development', done);
+    
+    // Correct the browser bundle
     grunt.task.run('replace');
   });
 

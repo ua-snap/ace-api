@@ -1,7 +1,7 @@
 // Automigrates all data models
 module.exports = function(app) {
 	// 	Groups
-	/*app.dataSources.postgresql_heroku.automigrate('group', function(err) {
+	app.dataSources.postgresql_heroku.automigrate('group', function(err) {
 		if (err) throw err;
 		
 		// Mobile Users
@@ -27,6 +27,7 @@ module.exports = function(app) {
 				]);
 			});			
 		});
+	});
 	
 	
 	// Position
@@ -37,5 +38,5 @@ module.exports = function(app) {
 	// Weather Report
 	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
-	});*/
+	});
 };

@@ -12,7 +12,7 @@ module.exports = function(app)
 	
 	app.models.weatherreport.create([{userId: 1, positionId: 1, cloudCover: "1/8th"}]);*/
 	
-	app.models.group.create([{name: "TestUsers"}], function(err, group) {
+	/*app.models.group.create([{name: "TestUsers"}], function(err, group) {
 		app.models.mobile_user.create([
 			{username: "jsentell", email: "james.g.sentell@saic.com", password:"password", groupId: group[0].id},
 			{username: "jpowell", email: "jonathan.d.powell@saic.com", password:"password", groupId: group[0].id},
@@ -29,5 +29,5 @@ module.exports = function(app)
 			{username: "appuser2", email: "test2@test.com", password:"password", groupId: group[0].id},
 			{username: "appuser3", email: "test3@test.com", password:"password", groupId: group[0].id}			
 		]);
-	});		
+	});	*/	
 };
