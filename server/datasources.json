@@ -8,11 +8,5 @@
     "connector": "loopback-component-storage",
     "provider": "filesystem",
     "root": "./server/storage"
-  },
-  "postgresql_heroku": {
-    "url": "postgres://pqpszfwpocjpol:zEH_0PQfQ74GP9GKq4SeyhoHIz@ec2-107-22-175-206.compute-1.amazonaws.com:5432/dcpk7sgs1sjdbc",
-    "name": "postgresql_heroku",
-    "connector": "postgresql",
-    "debug": false
   }
 }

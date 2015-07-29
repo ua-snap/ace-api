@@ -91,9 +91,9 @@
       "property": "create"
     },
     {
-      "accessType": "EXECUTE",
+      "accessType": "REPLICATE",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$owner",
       "permission": "ALLOW",
       "property": "checkpoint" 
     }

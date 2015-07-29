@@ -34,19 +34,19 @@
     "public": false
   },
   "weatherreport": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "position": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "mobile_user": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "group": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "storage": {
