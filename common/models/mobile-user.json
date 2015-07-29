@@ -67,6 +67,13 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "__get__Positions" 
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "checkpoint" 
     }
   ],
   "methods": []
