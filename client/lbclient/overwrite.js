@@ -11,6 +11,10 @@ var enclose = function() {(
 		}
 	};
 	
+	Memory.prototype.authorizationHeaderAddition = function() {
+		opts.headers["authorization"] = window.localStorage.getItem("access_token", "");
+	}
+	
 	
 	Memory.prototype.loadFromFile = function(callback) {
 	  var self = this;

@@ -436,6 +436,16 @@ module.exports = function(grunt) {
             return str.match(/if\(!opts.uri[\s\S]*?;\n\t\t}/);
           }
         }]
+      },
+      authorizationHeaderAddition: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: "opts.headers = opts.headers || {}",
+          to: function(matchedString) {
+            return matchedString + "\n" + grunt.file.read('client/lbclient/overwrite.js').match(/opts.headers[\s\S]*?""\);/);
+          }
+        }]
       }
     }
   });
