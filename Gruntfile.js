@@ -446,6 +446,20 @@ module.exports = function(grunt) {
             return matchedString + "\n" + grunt.file.read('client/lbclient/overwrite.js').match(/opts.headers[\s\S]*?""\);/);
           }
         }]
+      },
+      filterUnknownPropertiesFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: "this.__unknownProperties = [];",
+          to: function(matchedString) {
+            return grunt.file.read('client/lbclient/overwrite.js').match(/this.__unknownProperties[\s\S]*?{};/);
+          }}, {
+          from: "this.__unknownProperties.push(p);",
+          to: function(matchedString) {
+            return grunt.file.read('client/lbclient/overwrite.js').match(/this.__unknownProperties[\s\S]*?\[p\];/);
+          }}
+        ] 
       }
     }
   });

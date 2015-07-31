@@ -34,14 +34,23 @@ module.exports = function(client) {
   // setup model replication
   var since = { push: -1, pull: -1 };
   function sync(cb) {
+    
+    // Get the current group id
+    var groupId = JSON.parse(window.localStorage.getItem("currentUser", {})).groupId;
+    
+    // Get array of user ids for users in the group
+    var groupIdArray = JSON.parse(window.localStorage.getItem("groupUserIds", []));
+    
     LocalGroup.replicate(
       RemoteGroup,
       since.push,
+      {where: {id: groupId}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
         RemoteGroup.replicate(
           LocalGroup,
           since.pull,
+          {where: {id: groupId}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -51,11 +60,13 @@ module.exports = function(client) {
      LocalMobileUser.replicate(
       RemoteMobileUser,
       since.push,
+      {where: {groupId: groupId}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
         RemoteMobileUser.replicate(
           LocalMobileUser,
           since.pull,
+          {where: {groupId: groupId}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -65,11 +76,13 @@ module.exports = function(client) {
       LocalPosition.replicate(
       RemotePosition,
       since.push,
+      {where: {userId: {inq: groupIdArray}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
         RemotePosition.replicate(
           LocalPosition,
           since.pull,
+          {where: {userId: {inq: groupIdArray}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -79,11 +92,13 @@ module.exports = function(client) {
       LocalWeatherReport.replicate(
       RemoteWeatherReport,
       since.push,
+      {where: {userId: {inq: groupIdArray}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
         RemoteWeatherReport.replicate(
           LocalWeatherReport,
           since.pull,
+          {where: {userId: {inq: groupIdArray}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();

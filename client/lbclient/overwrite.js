@@ -15,6 +15,12 @@ var enclose = function() {(
 		opts.headers["authorization"] = window.localStorage.getItem("access_token", "");
 	}
 	
+	Memory.prototype.filterUnknownPropertiesFix = function() {
+		this.__unknownProperties = {};
+		
+		this.__unknownProperties[p] = data[p];
+	}
+	
 	
 	Memory.prototype.loadFromFile = function(callback) {
 	  var self = this;
