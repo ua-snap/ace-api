@@ -16,7 +16,9 @@
       "defaultFn": "guid"
     },
     "userId": {
-      "type": "number",
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid",
       "required": true
     },
     "latlng": {

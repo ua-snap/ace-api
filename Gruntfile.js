@@ -404,28 +404,7 @@ module.exports = function(grunt) {
     
     // Text replace task (to correct generated browser.bundle.js sync library)
     replace: {
-      loadFromFile: {
-        src: ['client/lbclient/browser.bundle.js'],
-        overwrite: true,
-        replacements: [{
-          from: /Memory\.prototype\.loadFromFile[\s\S]*?\n};/,
-          to: function() {
-            var str = grunt.file.read('client/lbclient/overwrite.js');
-            return str.match(/Memory\.prototype\.loadFromFile[\s\S]*?\n\t};/);
-          }
-        }]
-      },
-      saveToFile: {
-        src: ['client/lbclient/browser.bundle.js'],
-        overwrite: true,
-        replacements: [{
-          from: /Memory\.prototype\.saveToFile[\s\S]*?\n};/,
-          to: function() {
-            var str = grunt.file.read('client/lbclient/overwrite.js');
-            return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
-          }
-        }]
-      },
+      
       windowLocationFix: {
         src: ['client/lbclient/browser.bundle.js'],
         overwrite: true,

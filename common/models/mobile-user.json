@@ -16,7 +16,9 @@
       "defaultFn": "guid"
     },
     "groupId": {
-      "type": "number"
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid"
     }
   },
   "validations": [],
@@ -116,6 +118,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "find" 
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "bulkUpdate" 
     }
   ],
   "methods": []
