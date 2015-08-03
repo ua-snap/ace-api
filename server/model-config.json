@@ -52,5 +52,13 @@
   "storage": {
     "dataSource": "storage",
     "public": true
+  },
+  "Checkpoint": {
+    "dataSource": "postgresql_heroku",
+    "public": false
+  },
+  "Change": {
+    "dataSource": "postgresql_heroku",
+    "public": false
   }
 }
