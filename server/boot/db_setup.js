@@ -48,9 +48,4 @@ module.exports = function(app) {
 	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
 	});
-	
-	// Migrate all required tables for tracking changes
-	app.dataSources.postgresql_heroku.automigrate('group-changes', function(err) {
-		if(err) throw err;
-	});
 };
