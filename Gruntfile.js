@@ -439,7 +439,29 @@ module.exports = function(grunt) {
             return grunt.file.read('client/lbclient/overwrite.js').match(/this.__unknownProperties[\s\S]*?\[p\];/);
           }}
         ] 
-      }
+      },
+      loadFromFile: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /Memory\.prototype\.loadFromFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.loadFromFile[\s\S]*?\n\t};/);
+          }
+        }]
+      },
+      saveToFile: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /Memory\.prototype\.saveToFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
+          }
+        }]
+      },
     }
   });
  
