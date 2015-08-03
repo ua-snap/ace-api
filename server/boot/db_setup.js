@@ -13,6 +13,11 @@ module.exports = function(app) {
 	app.dataSources.postgresql_heroku.automigrate('group', function(err) {
 		if (err) throw err;
 		
+		// Auto-migrate sync for group (group-change)
+		app.dataSources.postgresql_heroku.automigrate('group-change', function(err) {
+			if(err) throw err;
+		});
+		
 		// Mobile Users
 		app.dataSources.postgresql_heroku.automigrate('mobile_user', function(err) {
 			if(err) throw err;
