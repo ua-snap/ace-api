@@ -19,13 +19,9 @@ module.exports = function(app)
 			{username: "appuser2", email: "test2@test.com", password:"password", groupId: group[0].id},
 			{username: "appuser3", email: "test3@test.com", password:"password", groupId: group[0].id}			
 		], function(err, users) {
-			app.models.group.find(
-				{include: 'MobileUsers'}, function(err, result) {
-					var data = result;
-					var i = 0;
-					i++;
-				}
-			)
+			app.models.position.create([{latlng: {lat: 32.397, lng: -86.317}, userId: users[1].id, timestamp: new Date()}], function(err, position) {
+				app.models.weatherreport.create([{userId: users[1].id, positionId: position[0].id, cloudCover: "1/8th"}]);
+			});		
 		});
 	});	
 };

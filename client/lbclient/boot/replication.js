@@ -41,46 +41,6 @@ module.exports = function(client) {
     // Get array of user ids for users in the group
     var groupIdArray = JSON.parse(window.localStorage.getItem("groupUserIds", []));
     
-    // GROUP AND MOBILE USERS
-    
-    // Replicate the remote group item (only one)
-    /*RemoteGroup.findOne({where: {id: groupId}}, function(err, res) {
-      LocalGroup.upsert(res.toJSON(), function(err, res) {
-        if(err) throw err;
-      });
-    });
-    
-    RemoteMobileUser.find({where: {groupId: groupId}}, function(err, res) {
-      for(var i = 0; i < res.length; i++)
-      {
-        var user = res[i].toJSON();
-        user.password = "password";
-        LocalMobileUser.upsert(user, function(err, res) {
-          if(err) throw err;
-        });
-      }
-    });
-    
-    // Positions
-    RemoteGroup.find({where: {id: groupId}, include: "Positions"}, function(err, res) {
-      for(var i = 0; i < res.length; i++)
-      {
-        LocalPosition.upsert(res[i].toJSON(), function(err, res) {
-          if(err) throw err;
-        });
-      }
-    });
-    
-    // Weather Reports
-    RemoteGroup.find({where: {id: groupId}, include: "WeatherReports"}, function(err, res) {
-      for(var i = 0; i < res.length; i++)
-      {
-        LocalWeatherReport.upsert(res[i].toJSON(), function(err, res) {
-          if(err) throw err;
-        });
-      }
-    });*/
-    
     LocalGroup.replicate(
       RemoteGroup,
       since.push,
@@ -89,6 +49,7 @@ module.exports = function(client) {
         RemoteGroup.replicate(
           LocalGroup,
           since.pull,
+          {filter: {where: {id: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -103,6 +64,7 @@ module.exports = function(client) {
         RemoteMobileUser.replicate(
           LocalMobileUser,
           since.pull,
+          {filter: {where: {groupId: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -117,6 +79,7 @@ module.exports = function(client) {
         RemotePosition.replicate(
           LocalPosition,
           since.pull,
+          {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
@@ -131,6 +94,7 @@ module.exports = function(client) {
         RemoteWeatherReport.replicate(
           LocalWeatherReport,
           since.pull,
+          {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb();
