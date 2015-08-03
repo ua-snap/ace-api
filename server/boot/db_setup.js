@@ -22,6 +22,11 @@ module.exports = function(app) {
 		app.dataSources.postgresql_heroku.automigrate('mobile_user', function(err) {
 			if(err) throw err;
 			
+			// Migrate sync for mobile_user
+			app.dataSources.postgresql_heroku.automigrate('mobile_user-change', function(err) {
+				if(err) throw err;
+			});
+			
 			app.models.group.create([{name: "TestUsers"}], function(err, group) {
 				app.models.mobile_user.create([
 					{username: "jsentell", email: "james.g.sentell@saic.com", password:"password", groupId: group[0].id},
@@ -47,10 +52,20 @@ module.exports = function(app) {
 	// Position
 	app.dataSources.postgresql_heroku.automigrate('position', function(err) {
 		if (err) throw err;
+		
+		// Migrate sync for mobile_user
+		app.dataSources.postgresql_heroku.automigrate('position-change', function(err) {
+			if(err) throw err;
+		});
 	});
 	
 	// Weather Report
 	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
+		
+		// Migrate sync for mobile_user
+		app.dataSources.postgresql_heroku.automigrate('weatherreport-change', function(err) {
+			if(err) throw err;
+		});
 	});
 };
