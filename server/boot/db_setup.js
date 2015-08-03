@@ -1,5 +1,14 @@
 // Automigrates all data models
 module.exports = function(app) {
+	
+	app.dataSources.postgresql_heroku.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role'], function(err) {
+		if(err) throw err;
+	});
+	
+	app.dataSources.postgresql_heroku.automigrate(['Checkpoint', 'Change'], function(err) {
+		if(err) throw err;
+	});
+	
 	// 	Groups
 	app.dataSources.postgresql_heroku.automigrate('group', function(err) {
 		if (err) throw err;
@@ -38,5 +47,10 @@ module.exports = function(app) {
 	// Weather Report
 	app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
 		if (err) throw err;
+	});
+	
+	// Migrate all required tables for tracking changes
+	app.dataSources.postgresql_heroku.automigrate('group-changes', function(err) {
+		if(err) throw err;
 	});
 };
