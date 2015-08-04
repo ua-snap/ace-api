@@ -13,7 +13,6 @@ var enclose = function() {(
 	
 	Memory.prototype.authorizationHeaderAddition = function() {
 		opts.headers["authorization"] = window.localStorage.getItem("access_token", "");
-		opts.headers["X-Access-Token"] = window.localStorage.getItem("access_token", "");
 	}
 	
 	Memory.prototype.filterUnknownPropertiesFix = function() {
