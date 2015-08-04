@@ -14,44 +14,44 @@
     ]
   },
   "User": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false,
     "options": {
       "postgresql": {
-        "table": "access-token"
+        "table": "db"
       }
     }
   },
   "ACL": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "Role": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "weatherreport": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "position": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "mobile_user": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "group": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": true
   },
   "storage": {
@@ -59,11 +59,11 @@
     "public": true
   },
   "Checkpoint": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   },
   "Change": {
-    "dataSource": "postgresql_heroku",
+    "dataSource": "db",
     "public": false
   }
 }

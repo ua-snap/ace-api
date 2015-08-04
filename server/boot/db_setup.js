@@ -1,7 +1,7 @@
 // Automigrates all data models
 module.exports = function(app) {
 	
-	app.dataSources.postgresql_heroku.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
+	/*app.dataSources.postgresql_heroku.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
 		if(err) throw err;
 	});
 	
@@ -67,5 +67,5 @@ module.exports = function(app) {
 		app.dataSources.postgresql_heroku.automigrate('weatherreport-change', function(err) {
 			if(err) throw err;
 		});
-	});
+	});*/
 };

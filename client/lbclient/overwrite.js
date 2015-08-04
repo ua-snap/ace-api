@@ -118,34 +118,25 @@ var enclose = function() {(
 			models: self.cache
 		};
 		
-		if(window.document === undefined)
-		{
-			// in worker thread
-			if(!window.localPouchDb)
-		    {
-		      window.localPouchDb = new PouchDB('pouch-db');
-			}
-			
-			window.localPouchDb.upsert(localStorage, function(doc) {
-				doc.data = data;
-				return doc;			
-			}).catch(function(err) {
-				console.log(err);
-				var newDoc = {
-					_id: localStorage,
-					data: data
-				};
-				window.localPouchDb.putIfNotExists(newDoc);
-			});
+
+		// always in worker thread
+		if(!window.localPouchDb)
+	    {
+	      window.localPouchDb = new PouchDB('pouch-db');
 		}
-		else
-		{
-			if(!window.pouchWorker) {
-				window.pouchWorker = new Worker("js/sync/PouchWorker.js");
-			}
-			
-			window.pouchWorker.postMessage(data);
-		}    
+		
+		window.localPouchDb.upsert(localStorage, function(doc) {
+			doc.data = data;
+			return doc;			
+		}).catch(function(err) {
+			console.log(err);
+			var newDoc = {
+				_id: localStorage,
+				data: data
+			};
+			window.localPouchDb.putIfNotExists(newDoc);
+		});
+		
 		
 		/*window.localPouchDb.get(localStorage).then(function(doc) {
 			data._rev = doc._rev;
