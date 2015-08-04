@@ -19,7 +19,12 @@
   },
   "AccessToken": {
     "dataSource": "postgresql_heroku",
-    "public": false
+    "public": false,
+    "options": {
+      "postgresql": {
+        "table": "access-token"
+      }
+    }
   },
   "ACL": {
     "dataSource": "postgresql_heroku",
