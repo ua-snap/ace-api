@@ -13,6 +13,7 @@ var enclose = function() {(
 	
 	Memory.prototype.authorizationHeaderAddition = function() {
 		opts.headers["authorization"] = window.localStorage.getItem("access_token", "");
+		opts.headers["X-Access-Token"] = window.localStorage.getItem("access_token", "");
 	}
 	
 	Memory.prototype.filterUnknownPropertiesFix = function() {
@@ -117,23 +118,35 @@ var enclose = function() {(
 			ids: self.ids,
 			models: self.cache
 		};
-	    if(!window.localPouchDb)
-	    {
-	      window.localPouchDb = new PouchDB('pouch-db');
-		}
 		
-		window.localPouchDb.upsert(localStorage, function(doc) {
-			doc.data = data;
-		}).then(function(res) {
-			console.log("pouch upsert successful");
-		}).catch(function(err) {
-			console.log(err);
-			var newDoc = {
-				_id: localStorage,
-				data: data
-			};
-			window.localPouchDb.putIfNotExists(newDoc);
-		});
+		if(window.document === undefined)
+		{
+			// in worker thread
+			if(!window.localPouchDb)
+		    {
+		      window.localPouchDb = new PouchDB('pouch-db');
+			}
+			
+			window.localPouchDb.upsert(localStorage, function(doc) {
+				doc.data = data;
+				return doc;			
+			}).catch(function(err) {
+				console.log(err);
+				var newDoc = {
+					_id: localStorage,
+					data: data
+				};
+				window.localPouchDb.putIfNotExists(newDoc);
+			});
+		}
+		else
+		{
+			if(!window.pouchWorker) {
+				window.pouchWorker = new Worker("js/sync/PouchWorker.js");
+			}
+			
+			window.pouchWorker.postMessage(data);
+		}    
 		
 		/*window.localPouchDb.get(localStorage).then(function(doc) {
 			data._rev = doc._rev;

@@ -36,10 +36,10 @@ module.exports = function(client) {
   function sync(cb) {
     
     // Get the current group id
-    var groupId = JSON.parse(window.localStorage.getItem("currentUser", {})).groupId;
+    var groupId = JSON.parse(window.localStorage.getItem("currentUser", "{}")).groupId;
     
     // Get array of user ids for users in the group
-    var groupIdArray = JSON.parse(window.localStorage.getItem("groupUserIds", []));
+    var groupIdArray = JSON.parse(window.localStorage.getItem("groupUserIds", "[]"));
     
     LocalGroup.replicate(
       RemoteGroup,

@@ -422,7 +422,7 @@ module.exports = function(grunt) {
         replacements: [{
           from: "opts.headers = opts.headers || {}",
           to: function(matchedString) {
-            return matchedString + "\n" + grunt.file.read('client/lbclient/overwrite.js').match(/opts.headers[\s\S]*?""\);/);
+            return matchedString + "\n" + grunt.file.read('client/lbclient/overwrite.js').match(/opts.headers[\s\S]*""\);/);
           }
         }]
       },
