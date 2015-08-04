@@ -20,3 +20,8 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+// Add authorization headers
+app.use(loopback.token({
+    headers: ['authorization', 'X-Access-Token', 'x-access-token']
+}));
