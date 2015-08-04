@@ -44,7 +44,7 @@ var enclose = function() {(
 	    var data = undefined;
 	    window.localPouchDb.get(localStorage).then(function(doc) {
 		  //alert('get returned successful');
-	      data = doc;
+	      data = doc.data;
 	    }).catch(function(err) {
 			//alert('get returned error');
 			console.log(err);
@@ -120,8 +120,38 @@ var enclose = function() {(
 	    if(!window.localPouchDb)
 	    {
 	      window.localPouchDb = new PouchDB('pouch-db');
-	    }
-	    window.localPouchDb.put(data, localStorage);
+		}
+		
+		window.localPouchDb.upsert(localStorage, function(doc) {
+			doc.data = data;
+		}).then(function(res) {
+			console.log("pouch upsert successful");
+		}).catch(function(err) {
+			console.log(err);
+			var newDoc = {
+				_id: localStorage,
+				data: data
+			};
+			window.localPouchDb.putIfNotExists(newDoc);
+		});
+		
+		/*window.localPouchDb.get(localStorage).then(function(doc) {
+			data._rev = doc._rev;
+			data._id = localStorage;
+			window.localPouchDb.put(data).then(function(res) {
+				console.log("successful insert");
+			}).catch(function(err) {
+				throw err;
+			});
+		}).catch(function(err) {
+			// If this is the first time the database document is requested, call put with no rev field
+			if(err.status === 404 && err.name === "not_found" && err.reason === "missing")
+			{
+				data._id = localStorage;
+				window.localPouchDb.put(data);
+			}
+		});*/
+		
 	    //window.localStorage.setItem(localStorage, data);
 	    process.nextTick(function () {
 	      callback && callback(null, result);
