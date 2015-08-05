@@ -52,7 +52,7 @@ module.exports = function(client) {
           {filter: {where: {id: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
-            cb && cb();
+            cb && cb.call(this, "group");
           });
       });
       
@@ -67,7 +67,7 @@ module.exports = function(client) {
           {filter: {where: {groupId: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
-            cb && cb();
+            cb && cb.call(this, "mobileuser");
           });
       });
       
@@ -82,7 +82,7 @@ module.exports = function(client) {
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
-            cb && cb();
+            cb && cb.call(this, "position");
           });
       });
       
@@ -97,7 +97,7 @@ module.exports = function(client) {
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
-            cb && cb();
+            cb && cb.call(this, "report");
           });
       });
   }

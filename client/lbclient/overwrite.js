@@ -44,14 +44,14 @@ var enclose = function() {(
 	    var data = undefined;
 	    window.localPouchDb.get(localStorage).then(function(doc) {
 		  //alert('get returned successful');
-	      data = doc.data;
+	      data = doc.data;	
+		  parseAndLoad(data);	
 	    }).catch(function(err) {
 			//alert('get returned error');
 			console.log(err);
 			data = {};
-		});
-		
-		parseAndLoad(data);		
+			parseAndLoad(data);	
+		});	
 		
 	  } else {
 	    process.nextTick(callback);
