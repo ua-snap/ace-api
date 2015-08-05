@@ -1,6 +1,6 @@
 
 module.exports = {
   remote: {
-    url: "http://192.168.1.2:3000/api"
+    url: "https://ace-api-dev.herokuapp.com/api"
   }
 };

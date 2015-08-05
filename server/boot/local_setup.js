@@ -2,7 +2,7 @@ module.exports = function(app)
 {
 	/* Setup for local instance */
 	
-	app.models.group.create([{name: "TestUsers"}], function(err, group) {
+	/*app.models.group.create([{name: "TestUsers"}], function(err, group) {
 		app.models.mobile_user.create([
 			{username: "jsentell", email: "james.g.sentell@saic.com", password:"password", groupId: group[0].id},
 			{username: "jpowell", email: "jonathan.d.powell@saic.com", password:"password", groupId: group[0].id},
@@ -23,5 +23,5 @@ module.exports = function(app)
 				app.models.weatherreport.create([{userId: users[1].id, positionId: position[0].id, cloudCover: "1/8th"}]);
 			});		
 		});
-	});	
+	});	*/
 };
