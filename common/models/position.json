@@ -23,7 +23,10 @@
     },
     "latlng": {
       "type": "geopoint",
-      "required": true
+      "required": true,
+      "postgresql": {
+        "dataType": "point"
+      }
     },
     "timestamp": {
       "type": "date",

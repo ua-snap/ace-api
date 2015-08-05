@@ -75,6 +75,13 @@ module.exports = function(client) {
       RemotePosition,
       since.push,
       function pushed(err, conflicts, cps) {
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }        
         since.push = cps;
         RemotePosition.replicate(
           LocalPosition,
