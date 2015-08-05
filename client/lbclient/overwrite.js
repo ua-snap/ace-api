@@ -21,6 +21,16 @@ var enclose = function() {(
 		this.__unknownProperties[p] = data[p];
 	}
 	
+	Memory.prototype.collection = function() {
+		// Fill in empty model if undefined
+		if(this.cache[model] === undefined)
+		{
+		  this.cache[model] = {};
+		}  
+		
+		return this.cache[model];
+	}
+	
 	
 	Memory.prototype.loadFromFile = function(callback) {
 	  var self = this;

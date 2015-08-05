@@ -462,6 +462,17 @@ module.exports = function(grunt) {
           }
         }]
       },
+      initialCollectionFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: "return this.cache[model];",
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/\/\/ Fill in empty[\s\S]*?model];/);
+          }
+        }]
+      }
     }
   });
  
