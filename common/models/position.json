@@ -3,7 +3,7 @@
   "plural": "Positions",
   "base": "PersistedModel",
   "strict": "validate",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
@@ -23,7 +23,8 @@
     },
     "latlng": {
       "type": "geopoint",
-      "required": true
+      "required": true,
+      
     },
     "timestamp": {
       "type": "date",

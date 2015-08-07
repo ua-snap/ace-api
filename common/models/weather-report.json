@@ -3,7 +3,7 @@
   "plural": "WeatherReports",
   "base": "PersistedModel",
   "strict": "validate",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
