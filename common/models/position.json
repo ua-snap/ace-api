@@ -25,7 +25,7 @@
       "type": "geopoint",
       "required": true,
       "postgresql": {
-        "dataType": "varchar2"
+        "dataType": "varchar"
       }
     },
     "timestamp": {
