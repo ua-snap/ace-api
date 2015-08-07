@@ -6,26 +6,26 @@ module.exports = function(app) {
 		
 		if(!actual)
 		{
-			app.dataSources.postgresql_heroku.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
+			app.dataSources.postgresql_heroku.autoupdate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
 				if(err) throw err;
 				
-				app.dataSources.postgresql_heroku.automigrate(['Checkpoint', 'Change'], function(err) {
+				app.dataSources.postgresql_heroku.autoupdate(['Checkpoint', 'Change'], function(err) {
 					if(err) throw err;
 					
 					// 	Groups
-					app.dataSources.postgresql_heroku.automigrate('group', function(err) {
+					app.dataSources.postgresql_heroku.autoupdate('group', function(err) {
 						if (err) throw err;
 						
 						// Auto-migrate sync for group (group-change)
-						app.dataSources.postgresql_heroku.automigrate('group-change', function(err) {
+						app.dataSources.postgresql_heroku.autoupdate('group-change', function(err) {
 							if(err) throw err;
 							
 							// Mobile Users
-							app.dataSources.postgresql_heroku.automigrate('mobile_user', function(err) {
+							app.dataSources.postgresql_heroku.autoupdate('mobile_user', function(err) {
 								if(err) throw err;
 								
 								// Mobile Users change
-								app.dataSources.postgresql_heroku.automigrate('mobile_user-change', function(err) {
+								app.dataSources.postgresql_heroku.autoupdate('mobile_user-change', function(err) {
 									if(err) throw err;
 									
 									// Now all users and groups can be added
@@ -54,21 +54,21 @@ module.exports = function(app) {
 					
 					
 					// Position
-					app.dataSources.postgresql_heroku.automigrate('position', function(err) {
+					app.dataSources.postgresql_heroku.autoupdate('position', function(err) {
 						if (err) throw err;
 						
 						// Migrate sync for mobile_user
-						app.dataSources.postgresql_heroku.automigrate('position-change', function(err) {
+						app.dataSources.postgresql_heroku.autoupdate('position-change', function(err) {
 							if(err) throw err;
 						});
 					});
 					
 					// Weather Report
-					app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
+					app.dataSources.postgresql_heroku.autoupdate('weatherreport', function(err) {
 						if (err) throw err;
 						
 						// Migrate sync for mobile_user
-						app.dataSources.postgresql_heroku.automigrate('weatherreport-change', function(err) {
+						app.dataSources.postgresql_heroku.autoupdate('weatherreport-change', function(err) {
 							if(err) throw err;
 						});
 					});
