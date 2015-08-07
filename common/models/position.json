@@ -23,8 +23,7 @@
     },
     "latlng": {
       "type": "geopoint",
-      "required": true,
-      
+      "required": true
     },
     "timestamp": {
       "type": "date",
