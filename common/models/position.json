@@ -5,10 +5,7 @@
   "strict": "validate",
   "idInjection": true,
   "options": {
-    "validateUpsert": true,
-    "postgresql": {
-      "schema": "strongloop"
-    }
+    "validateUpsert": true
   },
   "trackChanges": true,
   "persistUndefinedAsNull": true,
