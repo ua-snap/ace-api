@@ -2,26 +2,26 @@
 module.exports = function(app) {
 	
 	
-	app.dataSources.postgresql_heroku.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
+	app.dataSources.mongo.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
 		if(err) throw err;
 		
-		app.dataSources.postgresql_heroku.automigrate(['Checkpoint', 'Change'], function(err) {
+		app.dataSources.mongo.automigrate(['Checkpoint', 'Change'], function(err) {
 			if(err) throw err;
 			
 			// 	Groups
-			app.dataSources.postgresql_heroku.automigrate('group', function(err) {
+			app.dataSources.mongo.automigrate('group', function(err) {
 				if (err) throw err;
 				
 				// Auto-migrate sync for group (group-change)
-				app.dataSources.postgresql_heroku.automigrate('group-change', function(err) {
+				app.dataSources.mongo.automigrate('group-change', function(err) {
 					if(err) throw err;
 					
 					// Mobile Users
-					app.dataSources.postgresql_heroku.automigrate('mobile_user', function(err) {
+					app.dataSources.mongo.automigrate('mobile_user', function(err) {
 						if(err) throw err;
 						
 						// Mobile Users change
-						app.dataSources.postgresql_heroku.automigrate('mobile_user-change', function(err) {
+						app.dataSources.mongo.automigrate('mobile_user-change', function(err) {
 							if(err) throw err;
 							
 							// Now all users and groups can be added
@@ -50,21 +50,21 @@ module.exports = function(app) {
 			
 			
 			// Position
-			app.dataSources.postgresql_heroku.automigrate('position', function(err) {
+			app.dataSources.mongo.automigrate('position', function(err) {
 				if (err) throw err;
 				
 				// Migrate sync for mobile_user
-				app.dataSources.postgresql_heroku.automigrate('position-change', function(err) {
+				app.dataSources.mongo.automigrate('position-change', function(err) {
 					if(err) throw err;
 				});
 			});
 			
 			// Weather Report
-			app.dataSources.postgresql_heroku.automigrate('weatherreport', function(err) {
+			app.dataSources.mongo.automigrate('weatherreport', function(err) {
 				if (err) throw err;
 				
 				// Migrate sync for mobile_user
-				app.dataSources.postgresql_heroku.automigrate('weatherreport-change', function(err) {
+				app.dataSources.mongo.automigrate('weatherreport-change', function(err) {
 					if(err) throw err;
 				});
 			});

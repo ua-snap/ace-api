@@ -9,10 +9,9 @@
     "provider": "filesystem",
     "root": "./server/storage"
   },
-  "postgresql_heroku": {
-    "name": "postgresql_heroku",
-    "connector": "postgresql",
-    "debug": true,
-    "url": "postgres://fpwdmvdmhsenyi:gkpIVsJfRqC6UJL-LLCeN4iib2@ec2-107-20-220-251.compute-1.amazonaws.com:5432/dkok5ks8aaboe"
+  "mongo": {
+    "name": "mongo",
+    "connector": "mongodb",
+    "url": "mongodb://<dbuser>:<dbpassword>@ds031223.mongolab.com:31223/heroku_5fvj7bx5"
   }
 }
