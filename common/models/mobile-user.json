@@ -3,7 +3,7 @@
   "plural": "MobileUsers",
   "base": "User",
   "strict": "validate",
-  "idInjection": false,
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
