@@ -12,7 +12,7 @@
   "postgresql_heroku": {
     "name": "postgresql_heroku",
     "connector": "postgresql",
-    "debug": false,
-    "url": "postgres://cmzgykwcrcoblm:yYj4QFMdMHdGCoyrGtsicHWraC@ec2-204-236-226-63.compute-1.amazonaws.com:5432/d9iq20cn42k7ru"
+    "debug": true,
+    "url": "postgres://fpwdmvdmhsenyi:gkpIVsJfRqC6UJL-LLCeN4iib2@ec2-107-20-220-251.compute-1.amazonaws.com:5432/dkok5ks8aaboe"
   }
 }
