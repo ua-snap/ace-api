@@ -12,6 +12,6 @@
   "mongo": {
     "name": "mongo",
     "connector": "mongodb",
-    "url": "mongodb://<dbuser>:<dbpassword>@ds031223.mongolab.com:31223/heroku_5fvj7bx5"
+    "url": "mongodb://loopback_connector:loopbackPass@ds031223.mongolab.com:31223/heroku_5fvj7bx5"
   }
 }
