@@ -2,12 +2,12 @@
 module.exports = function(app) {
 	
 	// Initialize storage
-	app.models.storage.getContainer("mobile_uploads", function(err, container) {
+	/*app.models.storage.getContainer("mobile_uploads", function(err, container) {
 		if(!container)
 		{
 			app.models.storage.createContainer({name: "mobile_uploads"}, function(err, container) {});
 		}
-	});
+	});*/
 	
 	
 	app.dataSources.mongo.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
