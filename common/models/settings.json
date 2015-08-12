@@ -18,8 +18,7 @@
     "userId": {
       "type": "string",
       "id": true,
-      "required": true,
-      "defaultFn": "guid"
+      "required": true
     },
     "gps": {
       "type": "Object"
