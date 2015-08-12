@@ -472,6 +472,14 @@ module.exports = function(grunt) {
             return str.match(/\/\/ Fill in empty[\s\S]*?model];/);
           }
         }]
+      },
+      loopbackTokenFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /app\.use\(loopback\.token[\s\S]*?}\)\);/,
+          to: ""
+        }]
       }
     }
   });

@@ -17,13 +17,11 @@
     },
     "groupId": {
       "type": "string",
-      "id": true,
-      "defaultFn": "guid"
+      "id": true
     },
     "settingsId": {
       "type": "string",
-      "id": true,
-      "defaultFn": "guid"
+      "id": true
     }
   },
   "validations": [],
