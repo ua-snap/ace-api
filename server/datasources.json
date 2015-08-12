@@ -10,8 +10,8 @@
     "root": "./server/storage"
   },
   "mongo": {
+    "url": "mongodb://loopback_connector:loopbackPass@ds031223.mongolab.com:31223/heroku_5fvj7bx5",
     "name": "mongo",
-    "connector": "mongodb",
-    "url": "mongodb://loopback_connector:loopbackPass@ds031223.mongolab.com:31223/heroku_5fvj7bx5"
+    "connector": "mongodb"
   }
 }

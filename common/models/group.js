@@ -6,10 +6,13 @@ module.exports = function(Group) {
 	};
 	
 	// Create a matching storage container with each new group instance
-	Group.beforeCreate = function(next, modelInstance) {
-		var group = modelInstance.toJSON();
-		app.models.storage.createContainer({name: group.name}, function(err, container) {
-		});
-		next();
-	};
+	Group.observe('before save', function(ctx, next) {
+		if(ctx.isNewInstance)
+		{
+			var group = ctx.instance.toJSON();
+			app.models.storage.createContainer({name: group.name}, function(err, container) {
+			});
+		}
+		next();	
+	});
 };

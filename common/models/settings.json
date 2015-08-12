@@ -1,0 +1,44 @@
+{
+  "name": "settings",
+  "plural": "Settings",
+  "base": "PersistedModel",
+  "strict": "validate",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid"
+    },
+    "userId": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "defaultFn": "guid"
+    },
+    "gps": {
+      "type": "Object"
+    },
+    "general": {
+      "type": "Object"
+    },
+    "language": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MobileUser": {
+      "type": "belongsTo",
+      "model": "mobile_user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

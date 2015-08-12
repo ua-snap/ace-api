@@ -18,14 +18,14 @@
     "userId": {
       "type": "string",
       "id": true,
-      "defaultFn": "guid",
-      "required": true
+      "required": true,
+      "defaultFn": "guid"
     },
     "positionId": {
       "type": "string",
       "id": true,
-      "defaultFn": "guid",
-      "required": true
+      "required": true,
+      "defaultFn": "guid"
     },
     "cloudCover": {
       "type": "string"
@@ -99,7 +99,7 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "checkpoint" 
+      "property": "checkpoint"
     }
   ],
   "methods": []

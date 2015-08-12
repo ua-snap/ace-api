@@ -11,19 +11,25 @@
   "LocalMobileUser": {
     "dataSource": "local"
   },
-    "RemoteMobileUser": {
-        "dataSource": "remote"
-    },
-    "LocalPosition": {
-        "dataSource": "local"
-    },
-    "RemotePosition": {
-        "dataSource": "remote"   
-    },
-    "LocalWeatherReport": {
-        "dataSource": "local"
-    },
-    "RemoteWeatherReport": {
-        "dataSource": "remote"
-    }
+  "RemoteMobileUser": {
+      "dataSource": "remote"
+  },
+  "LocalPosition": {
+      "dataSource": "local"
+  },
+  "RemotePosition": {
+      "dataSource": "remote"   
+  },
+  "LocalWeatherReport": {
+      "dataSource": "local"
+  },
+  "RemoteWeatherReport": {
+      "dataSource": "remote"
+  },
+  "LocalSettings": {
+    "dataSource": "local"
+  },
+  "RemoteSettings": {
+    "dataSource": "remote"
+  }
 }

@@ -18,6 +18,8 @@ module.exports = function(client) {
   var RemotePosition = client.models.RemotePosition;
   var LocalWeatherReport = client.models.LocalWeatherReport;
   var RemoteWeatherReport = client.models.RemoteWeatherReport;
+  var LocalSettings = client.models.LocalSettings;
+  var RemoteSettings = client.models.RemoteSettings;
     
 
   client.network = {
@@ -112,6 +114,21 @@ module.exports = function(client) {
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             cb && cb.call(this, "report");
+          });
+      });
+      
+      LocalSettings.replicate(
+      RemoteSettings,
+      since.push,
+      function pushed(err, conflicts, cps) {
+        since.push = cps;
+        RemoteSettings.replicate(
+          LocalSettings,
+          since.pull,
+          {filter: {where: {userId: {inq: groupIdArray}}}},
+          function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            cb && cb.call(this, "settings");
           });
       });
   }

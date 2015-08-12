@@ -76,6 +76,16 @@ module.exports = function(app) {
 					if(err) throw err;
 				});
 			});
+			
+			// Settings
+			app.dataSources.mongo.automigrate('settings', function(err) {
+				if (err) throw err;
+				
+				// Migrate sync for mobile_user
+				app.dataSources.mongo.automigrate('settings-change', function(err) {
+					if(err) throw err;
+				});
+			});
 		});
 	});	
 

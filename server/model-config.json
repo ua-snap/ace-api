@@ -60,5 +60,9 @@
   "Change": {
     "dataSource": "mongo",
     "public": false
+  },
+  "settings": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

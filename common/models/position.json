@@ -18,8 +18,8 @@
     "userId": {
       "type": "string",
       "id": true,
-      "defaultFn": "guid",
-      "required": true
+      "required": true,
+      "defaultFn": "guid"
     },
     "latlng": {
       "type": "geopoint",
@@ -87,7 +87,7 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "checkpoint" 
+      "property": "checkpoint"
     }
   ],
   "methods": []

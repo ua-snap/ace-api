@@ -19,6 +19,11 @@
       "type": "string",
       "id": true,
       "defaultFn": "guid"
+    },
+    "settingsId": {
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid"
     }
   },
   "validations": [],
@@ -47,6 +52,11 @@
       "type": "belongsTo",
       "model": "group",
       "foreignKey": "groupId"
+    },
+    "Settings": {
+      "type": "belongsTo",
+      "model": "settings",
+      "foreignKey": "settingsId"
     }
   },
   "acls": [
@@ -61,49 +71,49 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__WeatherReports" 
+      "property": "__get__WeatherReports"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__Positions" 
+      "property": "__get__Positions"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "checkpoint" 
+      "property": "checkpoint"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "diff" 
+      "property": "diff"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "changes" 
+      "property": "changes"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "createUpdates" 
+      "property": "createUpdates"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "currentCheckpoint" 
+      "property": "currentCheckpoint"
     },
     {
       "accessType": "READ",
@@ -117,14 +127,14 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "find" 
+      "property": "find"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "bulkUpdate" 
+      "property": "bulkUpdate"
     }
   ],
   "methods": []

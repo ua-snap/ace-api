@@ -61,49 +61,49 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__Positions" 
+      "property": "__get__Positions"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__findById__Positions" 
+      "property": "__findById__Positions"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__WeatherReports" 
+      "property": "__get__WeatherReports"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__findById__WeatherReports" 
+      "property": "__findById__WeatherReports"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__MobileUsers" 
+      "property": "__get__MobileUsers"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__findById__MobileUsers" 
+      "property": "__findById__MobileUsers"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "checkpoint" 
+      "property": "checkpoint"
     }
   ],
   "methods": []
