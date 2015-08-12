@@ -16,12 +16,10 @@
       "defaultFn": "guid"
     },
     "groupId": {
-      "type": "string",
-      "id": true
+      "type": "string"
     },
-    "settingsId": {
-      "type": "string",
-      "id": true
+    "settings": {
+      "type": "settings"
     }
   },
   "validations": [],
@@ -50,11 +48,6 @@
       "type": "belongsTo",
       "model": "group",
       "foreignKey": "groupId"
-    },
-    "Settings": {
-      "type": "belongsTo",
-      "model": "settings",
-      "foreignKey": "settingsId"
     }
   },
   "acls": [

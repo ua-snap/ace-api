@@ -17,14 +17,11 @@
     },
     "userId": {
       "type": "string",
-      "id": true,
       "required": true
     },
     "positionId": {
       "type": "string",
-      "id": true,
-      "required": true,
-      "defaultFn": "guid"
+      "required": true
     },
     "cloudCover": {
       "type": "string"

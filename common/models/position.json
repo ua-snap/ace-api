@@ -17,7 +17,6 @@
     },
     "userId": {
       "type": "string",
-      "id": true,
       "required": true
     },
     "latlng": {

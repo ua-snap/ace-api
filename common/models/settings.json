@@ -15,11 +15,6 @@
       "id": true,
       "defaultFn": "guid"
     },
-    "userId": {
-      "type": "string",
-      "id": true,
-      "required": true
-    },
     "gps": {
       "type": "Object"
     },
@@ -32,11 +27,6 @@
   },
   "validations": [],
   "relations": {
-    "MobileUser": {
-      "type": "belongsTo",
-      "model": "mobile_user",
-      "foreignKey": "userId"
-    }
   },
   "acls": [],
   "methods": []
