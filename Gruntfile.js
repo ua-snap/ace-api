@@ -480,6 +480,14 @@ module.exports = function(grunt) {
           from: /app\.use\(loopback\.token[\s\S]*?}\)\);/,
           to: ""
         }]
+      },
+      callbackApplyFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /callback.apply\(invocation, args\);/,
+          to: "if(callback) { callback.apply(invocation, args); }"
+        }]
       }
     }
   });
