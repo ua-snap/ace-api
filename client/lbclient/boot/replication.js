@@ -62,12 +62,26 @@ module.exports = function(client) {
       RemoteMobileUser,
       since.push,
       function pushed(err, conflicts, cps) {
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }
         since.push = cps;
         RemoteMobileUser.replicate(
           LocalMobileUser,
           since.pull,
           {filter: {where: {groupId: groupId}}},
           function pulled(err, conflicts, cps) {
+            if(conflicts)
+            {
+              for(var i = 0; i < conflicts.length; i++)
+              {
+                conflicts[i].resolve();
+              }
+            }
             since.pull = cps;
             cb && cb.call(this, "mobileuser");
           });
@@ -106,12 +120,26 @@ module.exports = function(client) {
       RemoteWeatherReport,
       since.push,
       function pushed(err, conflicts, cps) {
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }
         since.push = cps;
         RemoteWeatherReport.replicate(
           LocalWeatherReport,
           since.pull,
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
+            if(conflicts)
+            {
+              for(var i = 0; i < conflicts.length; i++)
+              {
+                conflicts[i].resolve();
+              }
+            }
             since.pull = cps;
             cb && cb.call(this, "report");
           });
