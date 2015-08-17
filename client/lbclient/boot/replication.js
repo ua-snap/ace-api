@@ -38,19 +38,22 @@ module.exports = function(client) {
   function sync(cb) {
     
     // Get the current group id
-    var groupId = JSON.parse(window.localStorage.getItem("currentUser", "{}")).groupId;
+    var groupId = window.localStorage.getItem("currentUser", {}).groupId;
     
     // Get array of user ids for users in the group
-    var groupIdArray = JSON.parse(window.localStorage.getItem("groupUserIds", "[]"));
+    var groupIdArray = window.localStorage.getItem("groupUserIds", []);
+    
+    // PersistedModel.replicate = function(since, targetModel, options, callback)
     
     LocalGroup.replicate(
-      RemoteGroup,
       since.push,
+      RemoteGroup,
+      {filter: {where: {id: groupId}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
         RemoteGroup.replicate(
-          LocalGroup,
           since.pull,
+          LocalGroup,
           {filter: {where: {id: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
@@ -59,38 +62,28 @@ module.exports = function(client) {
       });
       
      LocalMobileUser.replicate(
-      RemoteMobileUser,
       since.push,
+      RemoteMobileUser,
+      {filter: {where: {groupId: groupId}, fields: {password: false}}},
       function pushed(err, conflicts, cps) {
-        if(conflicts)
-        {
-          for(var i = 0; i < conflicts.length; i++)
-          {
-            conflicts[i].resolve();
-          }
-        }
         since.push = cps;
         RemoteMobileUser.replicate(
-          LocalMobileUser,
           since.pull,
-          {filter: {where: {groupId: groupId}}},
+          LocalMobileUser,
+          {filter: {where: {groupId: groupId}, fields: {password: false}}},
           function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            // Submit request to execute callbacks before firing off conflict resolutions
+            cb && cb.call(this, "mobileuser");
+            
             if(conflicts)
             {
               for(var i = 0; i < conflicts.length; i++)
               {
                 conflicts[i].resolve();
               }
-            }
-            since.pull = cps;
-            cb && cb.call(this, "mobileuser");
-          });
-      });
-      
-      LocalPosition.replicate(
-      RemotePosition,
-      since.push,
-      function pushed(err, conflicts, cps) {
+            }            
+        });
         if(conflicts)
         {
           for(var i = 0; i < conflicts.length; i++)
@@ -98,28 +91,89 @@ module.exports = function(client) {
             conflicts[i].resolve();
           }
         }        
+      });
+      
+      LocalPosition.replicate(
+      since.push,
+      RemotePosition,
+      {filter: {where: {userId: {inq: groupIdArray}}}},
+      function pushed(err, conflicts, cps) {
         since.push = cps;
         RemotePosition.replicate(
-          LocalPosition,
           since.pull,
+          LocalPosition,
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            cb && cb.call(this, "position");
             if(conflicts)
             {
               for(var i = 0; i < conflicts.length; i++)
               {
                 conflicts[i].resolve();
               }
-            }    
-            since.pull = cps;
-            cb && cb.call(this, "position");
-          });
+            }                
+        });
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }            
       });
       
       LocalWeatherReport.replicate(
-      RemoteWeatherReport,
       since.push,
+      RemoteWeatherReport,
+      {filter: {where: {userId: {inq: groupIdArray}}}},
       function pushed(err, conflicts, cps) {
+        since.push = cps;
+        RemoteWeatherReport.replicate(
+          since.pull,
+          LocalWeatherReport,
+          {filter: {where: {userId: {inq: groupIdArray}}}},
+          function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            cb && cb.call(this, "report");
+            if(conflicts)
+            {
+              for(var i = 0; i < conflicts.length; i++)
+              {
+                conflicts[i].resolve();
+              }
+            }            
+        });
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }       
+      });
+      
+      /*LocalSettings.replicate(
+      since.push,
+      RemoteSettings,
+      {},
+      function pushed(err, conflicts, cps) {
+        since.push = cps;
+        RemoteSettings.replicate(
+          since.pull,
+          LocalSettings,
+          {},
+          function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            cb && cb.call(this, "settings");
+            if(conflicts)
+            {
+              for(var i = 0; i < conflicts.length; i++)
+              {
+                conflicts[i].resolve();
+              }
+            }            
+        });
         if(conflicts)
         {
           for(var i = 0; i < conflicts.length; i++)
@@ -127,38 +181,8 @@ module.exports = function(client) {
             conflicts[i].resolve();
           }
         }
-        since.push = cps;
-        RemoteWeatherReport.replicate(
-          LocalWeatherReport,
-          since.pull,
-          {filter: {where: {userId: {inq: groupIdArray}}}},
-          function pulled(err, conflicts, cps) {
-            if(conflicts)
-            {
-              for(var i = 0; i < conflicts.length; i++)
-              {
-                conflicts[i].resolve();
-              }
-            }
-            since.pull = cps;
-            cb && cb.call(this, "report");
-          });
-      });
-      
-      LocalSettings.replicate(
-      RemoteSettings,
-      since.push,
-      function pushed(err, conflicts, cps) {
-        since.push = cps;
-        RemoteSettings.replicate(
-          LocalSettings,
-          since.pull,
-          {filter: {where: {userId: {inq: groupIdArray}}}},
-          function pulled(err, conflicts, cps) {
-            since.pull = cps;
-            cb && cb.call(this, "settings");
-          });
-      });
+        
+      });*/
   }
 
   // sync local changes if connected

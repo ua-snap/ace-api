@@ -440,28 +440,7 @@ module.exports = function(grunt) {
           }}
         ] 
       },
-      loadFromFile: {
-        src: ['client/lbclient/browser.bundle.js'],
-        overwrite: true,
-        replacements: [{
-          from: /Memory\.prototype\.loadFromFile[\s\S]*?\n};/,
-          to: function() {
-            var str = grunt.file.read('client/lbclient/overwrite.js');
-            return str.match(/Memory\.prototype\.loadFromFile[\s\S]*?\n\t};/);
-          }
-        }]
-      },
-      saveToFile: {
-        src: ['client/lbclient/browser.bundle.js'],
-        overwrite: true,
-        replacements: [{
-          from: /Memory\.prototype\.saveToFile[\s\S]*?\n};/,
-          to: function() {
-            var str = grunt.file.read('client/lbclient/overwrite.js');
-            return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
-          }
-        }]
-      },
+      
       initialCollectionFix: {
         src: ['client/lbclient/browser.bundle.js'],
         overwrite: true,
@@ -487,6 +466,36 @@ module.exports = function(grunt) {
         replacements: [{
           from: /callback.apply\(invocation, args\);/,
           to: "if(callback) { callback.apply(invocation, args); }"
+        }]
+      },
+      exampleRegexpFix: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: "if (example.regexp)",
+          to: "if(example===null) {return null;} if(example.regexp)"
+        }]
+      },
+      loadFromFile: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /Memory\.prototype\.loadFromFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.loadFromFile[\s\S]*?\n\t};/);
+          }
+        }]
+      },
+      saveToFile: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /Memory\.prototype\.saveToFile[\s\S]*?\n};/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
+          }
         }]
       }
     }
