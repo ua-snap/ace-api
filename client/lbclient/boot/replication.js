@@ -45,18 +45,22 @@ module.exports = function(client) {
     
     // PersistedModel.replicate = function(since, targetModel, options, callback)
     
+    console.log("sync starting");
+    
     LocalGroup.replicate(
       since.push,
       RemoteGroup,
       {filter: {where: {id: groupId}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
+        console.log("LocalGroup pushed");
         RemoteGroup.replicate(
           since.pull,
           LocalGroup,
           {filter: {where: {id: groupId}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
+            console.log("LocalGroup pulled");
             cb && cb.call(this, "group");
           });
       });
@@ -67,6 +71,7 @@ module.exports = function(client) {
       {filter: {where: {groupId: groupId}, fields: {password: false}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
+        console.log("LocalMobileUser pushed");
         RemoteMobileUser.replicate(
           since.pull,
           LocalMobileUser,
@@ -74,6 +79,7 @@ module.exports = function(client) {
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             // Submit request to execute callbacks before firing off conflict resolutions
+            console.log("LocalMobileUser pulled");
             cb && cb.call(this, "mobileuser");
             
             if(conflicts)
@@ -99,12 +105,14 @@ module.exports = function(client) {
       {filter: {where: {userId: {inq: groupIdArray}}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
+        console.log("LocalPosition pushed");
         RemotePosition.replicate(
           since.pull,
           LocalPosition,
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
+            console.log("LocalPosition pulled");
             cb && cb.call(this, "position");
             if(conflicts)
             {
@@ -129,12 +137,14 @@ module.exports = function(client) {
       {filter: {where: {userId: {inq: groupIdArray}}}},
       function pushed(err, conflicts, cps) {
         since.push = cps;
+        console.log("LocalWeatherReport pushed");
         RemoteWeatherReport.replicate(
           since.pull,
           LocalWeatherReport,
           {filter: {where: {userId: {inq: groupIdArray}}}},
           function pulled(err, conflicts, cps) {
             since.pull = cps;
+            console.log("LocalWeatherReport pulled");
             cb && cb.call(this, "report");
             if(conflicts)
             {

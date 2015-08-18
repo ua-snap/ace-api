@@ -497,6 +497,25 @@ module.exports = function(grunt) {
             return str.match(/Memory\.prototype\.saveToFile[\s\S]*?\n\t};/);
           }
         }]
+      },
+      offlineLogin: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /if \(self.settings.emailVerificationRequired[\s\S]*?user.createAccessToken\(credentials.ttl, credentials, tokenHandler\);[\s]*?}[\s]*?}/,
+          to: "var value = {user: user.toJSON(), id: null}; fn(null, value);"
+        }]
+      },
+      updateOptimizationEqualityCheck: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /switch \(update.type[\s\S]*?break;[\s]*?}/,
+          to: function() {
+            var str = grunt.file.read('client/lbclient/overwrite.js');
+            return str.match(/if\(!current[\s\S]*?break;[\s]*?}[\s]*?}/);
+          }
+        }]
       }
     }
   });

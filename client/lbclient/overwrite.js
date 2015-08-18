@@ -139,4 +139,29 @@ var enclose = function() {(
 			});
 		}
 	};
+	
+	Memory.prototype.updateAll = function() {
+		// Check for equality before updating
+        if(!current || !(_.isEqual(JSON.stringify(current.__data), JSON.stringify(update.data))))
+        {
+            switch (update.type) {
+            case Change.UPDATE:
+                tasks.push(function(cb) {
+                applyUpdate(Model, id, current, update.data, update.change, conflicts, cb);
+                });
+                break;
+    
+            case Change.CREATE:
+                tasks.push(function(cb) {
+                applyCreate(Model, id, current, update.data, update.change, conflicts, cb);
+                });
+                break;
+            case Change.DELETE:
+                tasks.push(function(cb) {
+                applyDelete(Model, id, current, update.change, conflicts, cb);
+                });
+                break;
+            }
+        }
+	};
 )};
