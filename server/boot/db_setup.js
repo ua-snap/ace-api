@@ -40,7 +40,8 @@ module.exports = function(app) {
 									{username: "pmeyer", email: "paul.meyer@nasa.gov", password:"password", groupId: group[0].id},
 									{username: "hhelton", email: "heather.l.helton3.civ@mail.mil", password:"password", groupId: group[0].id},
 									{username: "sspehn", email: "stephen.l.spehn.civ@mail.mil", password:"password", groupId: group[0].id},
-									{username: "jpanter", email: "james.e.panter@saic.com", password:"password", groupId: group[0].id}
+									{username: "jpanter", email: "james.e.panter@saic.com", password:"password", groupId: group[0].id},
+									{username: "lforbes", email: "lforbes@test.com", password:"password", groupId: group[0].id}
 								]);
 							});
 								
