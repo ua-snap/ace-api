@@ -516,6 +516,16 @@ module.exports = function(grunt) {
             return str.match(/if\(!current[\s\S]*?break;[\s]*?}[\s]*?}/);
           }
         }]
+      },
+      loadOnlyInWebWorker: {
+        src: ['client/lbclient/browser.bundle.js'],
+        overwrite: true,
+        replacements: [{
+          from: /[\s\S]*/,
+          to: function(str) {
+            return str;
+          }
+        }]
       }
     }
   });

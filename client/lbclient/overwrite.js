@@ -64,11 +64,11 @@ var enclose = function() {(
 		
 		function parseAndLoad(data) {
 			if (data) {
-			try {
+			/*try {
 				data = JSON.parse(data.toString());
 			} catch(e) {
 				return callback(e);
-			}
+			}*/
 		
 			self.ids = data.ids || {};
 			self.cache = data.models || {};
