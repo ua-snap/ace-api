@@ -17,9 +17,6 @@
   "parse": {},
   "routes": {},
   "files": {
-    "loopback#static": {
-      "params": "$!../upload_browser_client"
-    }
   },
   "final": {
     "loopback#urlNotFound": {}
