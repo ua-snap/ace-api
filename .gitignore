@@ -48,3 +48,9 @@ node_modules
 
 # .settings directory
 .settings/
+
+# Miscellaneous files
+.editorconfig
+.jshintignore
+.jshintrc
+.yo-rc.json
