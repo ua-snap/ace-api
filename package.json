@@ -27,6 +27,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-docular": "^0.2.4",
     "grunt-loopback-sdk-angular": "^1.1.2",
+    "grunt-surround": "^0.1.0",
     "grunt-text-replace": "^0.4.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",

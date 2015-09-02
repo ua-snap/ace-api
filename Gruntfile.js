@@ -516,18 +516,18 @@ module.exports = function(grunt) {
             return str.match(/if\(!current[\s\S]*?break;[\s]*?}[\s]*?}/);
           }
         }]
-      },
-      loadOnlyInWebWorker: {
-        src: ['client/lbclient/browser.bundle.js'],
-        overwrite: true,
-        replacements: [{
-          from: /[\s\S]*/,
-          to: function(str) {
-            return str;
-          }
-        }]
       }
-    }
+    },
+      surround: {
+        options: {
+          prepend: '/*Generated file.  Do not modify.  See ace-api repository.*/ if(typeof DedicatedWorkerGlobalScope != "undefined" && this instanceof DedicatedWorkerGlobalScope) {',
+          append: '}',
+          overwrite: true,
+        },
+        files: {
+          src: 'client/lbclient/browser.bundle.js'
+        }
+      }
   });
  
   // Load the plugin that provides the "loopback-sdk-angular" and "grunt-docular" tasks.
@@ -536,6 +536,9 @@ module.exports = function(grunt) {
   
   // Load text replace module (used to correct generate browser.bundle.js error with window.location.protocol)
   grunt.loadNpmTasks('grunt-text-replace');
+  
+  // Load surround task (to ensure browser.bundle.js will load only in a web browser)
+  grunt.loadNpmTasks('grunt-surround');
   
   // Default task(s).
   grunt.registerTask('default', ['loopback_sdk_angular', 'docular']);
@@ -546,6 +549,9 @@ module.exports = function(grunt) {
     
     // Correct the browser bundle
     grunt.task.run('replace');
+    
+    // Surround to ensure it loads only in a web worker thread
+    grunt.task.run('surround');
   });
 
   grunt.registerTask('build-config', 'Build confg.js from JSON files', function() {
