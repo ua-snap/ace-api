@@ -28,34 +28,19 @@
       "required": true
     },
     "accuracy": {
-      "type": "number",
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "type": "number"
     },
     "altitude": {
-      "type": "number",
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "type": "number"
     },
     "altitudeAccuracy": {
-      "type": "number",
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "type": "number"
     },
     "heading": {
-      "type": "number",
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "type": "number"
     },
     "speed": {
-      "type": "number",
-      "postgresql": {
-        "dataType": "numeric"
-      }
+      "type": "number"
     }
   },
   "validations": [],
