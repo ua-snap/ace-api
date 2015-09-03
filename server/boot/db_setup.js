@@ -3,7 +3,7 @@ module.exports = function(app) {
 	app.dataSources.mongo.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
 		if(err) throw err;
 		
-		app.dataSources.mongo.automigrate(['Checkpoint', 'Change'], function(err) {
+		app.dataSources.mongo.automigrate(['Checkpoint', 'Change', 'checkpoint'], function(err) {
 			if(err) throw err;
 			
 			// 	Groups
