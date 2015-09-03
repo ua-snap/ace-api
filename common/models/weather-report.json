@@ -36,16 +36,16 @@
       "type": "string"
     },
     "pressureValue": {
-      "type": "number"
+      "type": "string"
     },
     "temperatureValue": {
-      "type": "number"
+      "type": "string"
     },
     "temperatureUnits": {
       "type": "string"
     },
     "windValue": {
-      "type": "number"
+      "type": "string"
     },
     "windUnits": {
       "type": "string"
