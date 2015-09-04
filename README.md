@@ -26,7 +26,7 @@ of this repository, as well as the issues section of the [ace-cordova-app](https
 repository.
 
 ## Hosting Options
-This projec is pre-configured to be hosted on [heroku.com](https://dashboard.heroku.com/apps).  After downloading and installing
+This projec is pre-configured to be hosted on [heroku.com](https://www.heroku.com).  After downloading and installing
 the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command), you can deploy the ACE API project by following the
 [instructions for node.js deployment](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) provided
 on Heroku's website.
