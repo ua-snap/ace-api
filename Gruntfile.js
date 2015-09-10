@@ -520,7 +520,7 @@ module.exports = function(grunt) {
     },
       surround: {
         options: {
-          prepend: '/*Generated file.  Do not modify.  See ace-api repository.*/ if(typeof DedicatedWorkerGlobalScope != "undefined" && this instanceof DedicatedWorkerGlobalScope) {',
+          prepend: '/*Generated file.  Do not modify.  See ace-api repository.*/ if(self.importScripts !== undefined) {',
           append: '}',
           overwrite: true,
         },

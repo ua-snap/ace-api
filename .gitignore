@@ -48,6 +48,7 @@ node_modules
 
 # .settings directory
 .settings/
+.vscode/
 
 # Miscellaneous files
 .editorconfig
