@@ -48,6 +48,11 @@
       "type": "belongsTo",
       "model": "group",
       "foreignKey": "groupId"
+    },
+    "GolfReports": {
+      "type": "hasMany",
+      "model": "golf_report",
+      "foreignKey": "userId"
     }
   },
   "acls": [

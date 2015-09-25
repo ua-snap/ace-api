@@ -1,0 +1,42 @@
+{
+  "name": "golf_report",
+  "plural": "GolfReports",
+  "base": "PersistedModel",
+  "strict": "validate",
+  "idInjection": true,
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "strokes": {
+      "type": "number"
+    },
+    "par": {
+      "type": "number"
+    },
+    "yardage": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MobileUser": {
+      "type": "belongsTo",
+      "model": "mobile_user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
