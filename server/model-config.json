@@ -14,39 +14,39 @@
     ]
   },
   "User": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "ACL": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "Role": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "weatherreport": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": true
   },
   "position": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": true
   },
   "mobile_user": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": true
   },
   "group": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": true
   },
   "storage": {
@@ -54,15 +54,15 @@
     "public": true
   },
   "Checkpoint": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "Change": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": false
   },
   "settings": {
-    "dataSource": "mongo",
+    "dataSource": "local_memory",
     "public": true
   }
 }

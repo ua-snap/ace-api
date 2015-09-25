@@ -1,6 +1,6 @@
 {
-  "db": {
-    "name": "db",
+  "local_memory": {
+    "name": "local_memory",
     "connector": "memory"
   },
   "storage": {
@@ -8,10 +8,5 @@
     "connector": "loopback-component-storage",
     "provider": "filesystem",
     "root": "./server/storage"
-  },
-  "mongo": {
-    "url": "mongodb://loopback_connector:loopbackPass@ds031223.mongolab.com:31223/heroku_5fvj7bx5",
-    "name": "mongo",
-    "connector": "mongodb"
   }
 }

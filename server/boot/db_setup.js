@@ -1,6 +1,6 @@
 // Automigrates all data models
 module.exports = function(app) {
-	app.dataSources.mongo.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
+	/*app.dataSources.mongo.automigrate(['User', 'AccessToken', 'RoleMapping', 'Role', 'ACL'], function(err) {
 		if(err) throw err;
 		
 		app.dataSources.mongo.automigrate(['Checkpoint', 'Change', 'checkpoint'], function(err) {
@@ -78,6 +78,9 @@ module.exports = function(app) {
 				});
 			});
 		});
-	});	
+	});*/
+	
+	// Local memory setup
+		
 
 };
