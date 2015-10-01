@@ -31,5 +31,11 @@
   },
   "RemoteSettings": {
     "dataSource": "remote"
+  },
+  "LocalGolfReport": {
+      "dataSource": "local"
+  },
+  "RemoteGolfReport": {
+      "dataSource": "remote"
   }
 }

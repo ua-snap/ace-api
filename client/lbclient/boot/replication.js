@@ -18,6 +18,8 @@ module.exports = function(client) {
   var RemotePosition = client.models.RemotePosition;
   var LocalWeatherReport = client.models.LocalWeatherReport;
   var RemoteWeatherReport = client.models.RemoteWeatherReport;
+  var LocalGolfReport = client.models.LocalGolfReport;
+  var RemoteGolfReport = client.models.RemoteGolfReport;
   var LocalSettings = client.models.LocalSettings;
   var RemoteSettings = client.models.RemoteSettings;
     
@@ -145,6 +147,39 @@ module.exports = function(client) {
           function pulled(err, conflicts, cps) {
             since.pull = cps;
             console.log("LocalWeatherReport pulled");
+            cb && cb.call(this, "report");
+            if(conflicts)
+            {
+              for(var i = 0; i < conflicts.length; i++)
+              {
+                conflicts[i].resolve();
+              }
+            }            
+        });
+        if(conflicts)
+        {
+          for(var i = 0; i < conflicts.length; i++)
+          {
+            conflicts[i].resolve();
+          }
+        }       
+      });
+      
+      // Add Golf Report Sync Here
+      LocalGolfReport.replicate(
+      since.push,
+      RemoteGolfReport,
+      {filter: {where: {userId: {inq: groupIdArray}}}},
+      function pushed(err, conflicts, cps) {
+        since.push = cps;
+        console.log("LocalGolfReport pushed");
+        RemoteGolfReport.replicate(
+          since.pull,
+          LocalGolfReport,
+          {filter: {where: {userId: {inq: groupIdArray}}}},
+          function pulled(err, conflicts, cps) {
+            since.pull = cps;
+            console.log("LocalGolfReport pulled");
             cb && cb.call(this, "report");
             if(conflicts)
             {
