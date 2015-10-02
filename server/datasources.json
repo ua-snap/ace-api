@@ -1,5 +1,5 @@
 {
-  "db": {
+  "local_memory": {
     "name": "local_memory",
     "connector": "memory"
   },

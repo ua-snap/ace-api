@@ -64,9 +64,5 @@
   "settings": {
     "dataSource": "local_memory",
     "public": true
-  },
-  "golf_report": {
-    "dataSource": "local_memory",
-    "public": true
   }
 }
