@@ -79,13 +79,4 @@ module.exports = function(app) {
 			});
 		});
 	});*/
-
-	// Local memory setup
-	app.models.group.create([{name: 'TestUsers'}], function(err, group) {
-		app.models.mobile_user.create([{username: 'testuser', password: 'password', email: 'test@test.com', groupId: group[0].id}], function(err, user) {
-			app.models.golf_report.create([{userId: user[0].id, strokes: 4, par: 5, yardage: 350}]);
-		});
-	});
-
-
 };
