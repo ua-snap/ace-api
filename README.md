@@ -1,3 +1,4 @@
+![ACE Android icon](/www/img/ace_icon.png)
 # ACE API
 
 ## Intro and Overview
@@ -40,3 +41,5 @@ allow developers the freedom to utilize the database system of their choosing.
 2. Run "npm install"
 3. Change the MongoDB connection string in the [server/datasources.json](https://github.com/ua-snap/ace-api/tree/master/server/datasources.json) file to point to your MongoDB instance
 4. Run "node ." from the root project directory to launch the application.
+
+For a full "Getting Started" tutorial, visit the [ACE Mobile Application wiki](https://github.com/ua-snap/ace-cordova-app/wiki/Getting-Started).
