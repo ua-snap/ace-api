@@ -21,8 +21,7 @@ allow Loopback to be run in a browser.  (Example app: https://github.com/strongl
 documentation: https://docs.strongloop.com/display/public/LB/Synchronization)
 
 ## Disclaimer
-While this project does demonstrate basic functionality, it is not complete.  Remaining work is documented in the issues section
-of this repository, as well as the issues section of the [ace-cordova-app](https://github.com/ua-snap/ace-cordova-app)
+While this project does demonstrate basic functionality, it is not complete.  Remaining work is documented in the issues section of the [ace-cordova-app](https://github.com/ua-snap/ace-cordova-app)
 repository.
 
 ## Hosting Suggestions
