@@ -1,4 +1,3 @@
-![ACE Android icon](/www/img/ace_icon.png)
 ### ACE API
 
 #### Intro and Overview
