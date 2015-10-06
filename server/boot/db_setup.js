@@ -79,4 +79,6 @@ module.exports = function(app) {
 			});
 		});
 	});*/
+
+	// Local memory setup
 };

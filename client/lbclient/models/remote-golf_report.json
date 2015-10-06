@@ -1,7 +1,0 @@
-{
-    "name": "RemoteGolfReport",
-    "base": "golf_report",
-    "plural": "GolfReports",
-    "trackChanges": false,
-    "enableRemoteReplication": true
-}

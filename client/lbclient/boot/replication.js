@@ -18,11 +18,11 @@ module.exports = function(client) {
   var RemotePosition = client.models.RemotePosition;
   var LocalWeatherReport = client.models.LocalWeatherReport;
   var RemoteWeatherReport = client.models.RemoteWeatherReport;
-  var LocalGolfReport = client.models.LocalGolfReport;
-  var RemoteGolfReport = client.models.RemoteGolfReport;
   var LocalSettings = client.models.LocalSettings;
   var RemoteSettings = client.models.RemoteSettings;
-    
+
+  // Add golf report exports here
+
 
   client.network = {
     _isConnected: true,
@@ -38,17 +38,17 @@ module.exports = function(client) {
   // setup model replication
   var since = { push: -1, pull: -1 };
   function sync(cb) {
-    
+
     // Get the current group id
     var groupId = window.localStorage.getItem("currentUser", {}).groupId;
-    
+
     // Get array of user ids for users in the group
     var groupIdArray = window.localStorage.getItem("groupUserIds", []);
-    
+
     // PersistedModel.replicate = function(since, targetModel, options, callback)
-    
+
     console.log("sync starting");
-    
+
     LocalGroup.replicate(
       since.push,
       RemoteGroup,
@@ -66,7 +66,7 @@ module.exports = function(client) {
             cb && cb.call(this, "group");
           });
       });
-      
+
      LocalMobileUser.replicate(
       since.push,
       RemoteMobileUser,
@@ -83,14 +83,14 @@ module.exports = function(client) {
             // Submit request to execute callbacks before firing off conflict resolutions
             console.log("LocalMobileUser pulled");
             cb && cb.call(this, "mobileuser");
-            
+
             if(conflicts)
             {
               for(var i = 0; i < conflicts.length; i++)
               {
                 conflicts[i].resolve();
               }
-            }            
+            }
         });
         if(conflicts)
         {
@@ -98,9 +98,9 @@ module.exports = function(client) {
           {
             conflicts[i].resolve();
           }
-        }        
+        }
       });
-      
+
       LocalPosition.replicate(
       since.push,
       RemotePosition,
@@ -122,7 +122,7 @@ module.exports = function(client) {
               {
                 conflicts[i].resolve();
               }
-            }                
+            }
         });
         if(conflicts)
         {
@@ -130,9 +130,9 @@ module.exports = function(client) {
           {
             conflicts[i].resolve();
           }
-        }            
+        }
       });
-      
+
       LocalWeatherReport.replicate(
       since.push,
       RemoteWeatherReport,
@@ -154,7 +154,7 @@ module.exports = function(client) {
               {
                 conflicts[i].resolve();
               }
-            }            
+            }
         });
         if(conflicts)
         {
@@ -162,42 +162,14 @@ module.exports = function(client) {
           {
             conflicts[i].resolve();
           }
-        }       
+        }
       });
-      
+
       // Add Golf Report Sync Here
-      LocalGolfReport.replicate(
-      since.push,
-      RemoteGolfReport,
-      {filter: {where: {userId: {inq: groupIdArray}}}},
-      function pushed(err, conflicts, cps) {
-        since.push = cps;
-        console.log("LocalGolfReport pushed");
-        RemoteGolfReport.replicate(
-          since.pull,
-          LocalGolfReport,
-          {filter: {where: {userId: {inq: groupIdArray}}}},
-          function pulled(err, conflicts, cps) {
-            since.pull = cps;
-            console.log("LocalGolfReport pulled");
-            cb && cb.call(this, "report");
-            if(conflicts)
-            {
-              for(var i = 0; i < conflicts.length; i++)
-              {
-                conflicts[i].resolve();
-              }
-            }            
-        });
-        if(conflicts)
-        {
-          for(var i = 0; i < conflicts.length; i++)
-          {
-            conflicts[i].resolve();
-          }
-        }       
-      });
+
+
       
+
       /*LocalSettings.replicate(
       since.push,
       RemoteSettings,
@@ -217,7 +189,7 @@ module.exports = function(client) {
               {
                 conflicts[i].resolve();
               }
-            }            
+            }
         });
         if(conflicts)
         {
@@ -226,7 +198,7 @@ module.exports = function(client) {
             conflicts[i].resolve();
           }
         }
-        
+
       });*/
   }
 
@@ -244,7 +216,7 @@ module.exports = function(client) {
       next();
       sync();
   });
-  
+
   LocalMobileUser.on('after delete', function(ctx, next) {
       next();
       sync();
