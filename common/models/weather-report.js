@@ -3,7 +3,7 @@ module.exports = function(Weatherreport) {
 		console.warn("Cannot update change records for WeatherReport: ", err);	
 	};
 
-	Weatherreport.withPositions = function(cb) {
+	Weatherreport.aaep = function(cb) {
 		Weatherreport.find({
 			where: {'aaep': true},
 			include: {
@@ -14,7 +14,7 @@ module.exports = function(Weatherreport) {
 		});
 	};
 
-	Weatherreport.remoteMethod('withPositions', {
+	Weatherreport.remoteMethod('aaep', {
 		http: {path: '/aaep', verb: 'get'},
 		returns: {arg: 'WeatherReports', type: 'string'}
 	});
