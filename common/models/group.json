@@ -23,7 +23,7 @@
   "validations": [],
   "relations": {
     "MobileUsers": {
-      "type": "hasMany",
+      "type": "hasAndBelongsToMany",
       "model": "mobile_user",
       "foreignKey": "groupId"
     },
