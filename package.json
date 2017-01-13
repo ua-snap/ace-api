@@ -9,11 +9,11 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "errorhandler": "^1.1.1",
-    "loopback": "^2.19.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-storage": "^1.5.0",
-    "loopback-connector-mongodb": "^1.13.0",
-    "loopback-datasource-juggler": "^2.19.0",
+    "loopback": "2.36.0",
+    "loopback-boot": "2.23.0",
+    "loopback-component-storage": "1.10.0",
+    "loopback-connector-mongodb": "1.17.0",
+    "loopback-datasource-juggler": "2.53.0",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
@@ -31,7 +31,7 @@
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
     "load-grunt-tasks": "^3.2.0",
-    "loopback-component-storage": "^1.5.0",
+    "loopback-component-storage": "1.10.0",
     "proquint": "0.0.1",
     "time-grunt": "^1.2.1"
   },
