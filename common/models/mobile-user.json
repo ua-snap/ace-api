@@ -16,7 +16,9 @@
       "defaultFn": "guid"
     },
     "groupId": {
-      "type": "string"
+      "type": [
+        "string"
+      ]
     },
     "settings": {
       "type": "settings"
@@ -45,7 +47,7 @@
       "foreignKey": "userId"
     },
     "Group": {
-      "type": "belongsTo",
+      "type": "hasAndBelongsToMany",
       "model": "group",
       "foreignKey": "groupId"
     }
